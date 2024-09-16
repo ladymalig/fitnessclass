@@ -24,11 +24,12 @@
             <div class="class-pack-section class-pack-section-ladies pink-section">
                 <h2>Lady's Ladies</h2>
 
-               <!-- Monday Class Pack -->
+               <!-- Monday Wednesday Class Pack -->
 <div class="class-pack">
-    <h3>Monday 9:00 am - 4 Class Pack</h3>
-    <p>Dates: October 7, 14, 21, 28</p>
-    <p>Price: $32.00 ($8.00 per class)</p>
+     <h3>Monday & Wednesday 9:00 AM - 9 Class Pack</h3>
+    <p>Dates: October 2, 7, 9, 14, 16, 21, 23, 28, 30</p>
+     <p>Price: $67.50 ($7.50 per class)</p>
+    
     <form id="signup-form" action="https://formspree.io/f/mvgpnvvl" method="POST">
         <label for="name-monday">Name:</label>
         <input type="text" id="name-monday" name="name" required>
@@ -67,13 +68,53 @@
     });
 
     function redirectToStripe() {
+        window.location.href = "https://buy.stripe.com/8wMfZ1c4I5ED5m86oq";
+    }
+</script>
+
+                <!-- Monday -->
+                <div class="class-pack">
+                   <h3>Monday 9:00 am - 4 Class Pack</h3>
+    <p>Dates: October 7, 14, 21, 28</p>
+    <p>Price: $32.00 ($8.00 per class)</p>
+                   <form id="signup-form-combo" action="https://formspree.io/f/mvgpnvvl" method="POST">
+    <label for="name-combo">Name:</label>
+    <input type="text" id="name-combo" name="name" required>
+
+    <label for="email-combo">Email:</label>
+    <input type="email" id="email-combo" name="email" required>
+
+    <label for="payment-method">Payment Method:</label><br>
+    <input type="radio" id="payment-method-cash-combo" name="payment-method" value="cash" required>
+    <label for="payment-method-cash-combo">Cash</label><br>
+    <input type="radio" id="payment-method-stripe-combo" name="payment-method" value="credit-card-stripe" required>
+    <label for="payment-method-stripe-combo">Credit Card (via Stripe)</label><br>
+
+    <input type="hidden" name="class" value="Lady's Ladies Combo 9-Class Pack">
+    <button type="submit" class="cta-button">Sign Up</button>
+</form>
+
+<button id="stripe-button-combo" class="cta-button" style="display:none;" onclick="redirectToStripeCombo()">Pay with Credit Card</button>
+
+<script>
+    const formCombo = document.getElementById('signup-form-combo');
+    const stripeButtonCombo = document.getElementById('stripe-button-combo');
+    
+    formCombo.addEventListener('submit', function(event) {
+        const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+        
+        if (paymentMethod === 'credit-card-stripe') {
+            event.preventDefault();
+            stripeButtonCombo.style.display = 'inline-block';
+        }
+    });
+
+    function redirectToStripeCombo() {
         window.location.href = "https://buy.stripe.com/8wM4gjfgU4AzbKweUU";
     }
 </script>
 
-
-
-                <!-- Wednesday Class Pack -->
+                <!-- Wednesday  -->
                 <div class="class-pack">
                     <h3>Wednesday 9:00 am - 5 Class Pack</h3>
                     <p>Dates: October 2, 9, 16, 23, 30</p>
@@ -112,50 +153,6 @@
 
     function redirectToStripeWednesday() {
         window.location.href = "https://buy.stripe.com/3cs1475Gk8QPg0M3cd";
-    }
-</script>
-
-
-
-                <!-- Monday & Wednesday Class Pack -->
-                <div class="class-pack">
-                    <h3>Monday & Wednesday 9:00 AM - 9 Class Pack</h3>
-                    <p>Dates: October 2, 7, 9, 14, 16, 21, 23, 28, 30</p>
-                    <p>Price: $67.50 ($7.50 per class)</p>
-                   <form id="signup-form-combo" action="https://formspree.io/f/mvgpnvvl" method="POST">
-    <label for="name-combo">Name:</label>
-    <input type="text" id="name-combo" name="name" required>
-
-    <label for="email-combo">Email:</label>
-    <input type="email" id="email-combo" name="email" required>
-
-    <label for="payment-method">Payment Method:</label><br>
-    <input type="radio" id="payment-method-cash-combo" name="payment-method" value="cash" required>
-    <label for="payment-method-cash-combo">Cash</label><br>
-    <input type="radio" id="payment-method-stripe-combo" name="payment-method" value="credit-card-stripe" required>
-    <label for="payment-method-stripe-combo">Credit Card (via Stripe)</label><br>
-
-    <input type="hidden" name="class" value="Lady's Ladies Combo 9-Class Pack">
-    <button type="submit" class="cta-button">Sign Up</button>
-</form>
-
-<button id="stripe-button-combo" class="cta-button" style="display:none;" onclick="redirectToStripeCombo()">Pay with Credit Card</button>
-
-<script>
-    const formCombo = document.getElementById('signup-form-combo');
-    const stripeButtonCombo = document.getElementById('stripe-button-combo');
-    
-    formCombo.addEventListener('submit', function(event) {
-        const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
-        
-        if (paymentMethod === 'credit-card-stripe') {
-            event.preventDefault();
-            stripeButtonCombo.style.display = 'inline-block';
-        }
-    });
-
-    function redirectToStripeCombo() {
-        window.location.href = "https://buy.stripe.com/8wMfZ1c4I5ED5m86oq";
     }
 </script>
 
