@@ -24,31 +24,53 @@
             <div class="class-pack-section class-pack-section-ladies pink-section">
                 <h2>Lady's Ladies</h2>
 
-                <!-- Monday Class Pack -->
-            <div class="class-pack">
-                <h3>Monday 9:00 am - 4 Class Pack</h3>
-                    <p>Dates: October 7, 14, 21, 28</p>
-                    <p>Price: $32.00 ($8.00 per class)</p>
-                        <form action="https://formspree.io/f/mvgpnvvl" method="POST">
-                            <label for="name-monday">Name:</label>
-                            <input type="text" id="name-monday" name="name" required>
+               <!-- Monday Class Pack -->
+<div class="class-pack">
+    <h3>Monday 9:00 am - 4 Class Pack</h3>
+    <p>Dates: October 7, 14, 21, 28</p>
+    <p>Price: $32.00 ($8.00 per class)</p>
+    <form id="signup-form" action="https://formspree.io/f/mvgpnvvl" method="POST">
+        <label for="name-monday">Name:</label>
+        <input type="text" id="name-monday" name="name" required>
 
         <label for="email-monday">Email:</label>
         <input type="email" id="email-monday" name="email" required>
 
-        <label for="payment-method-monday">Payment Method:</label>
-        <input type="checkbox" id="payment-method-cash" name="payment-method" value="cash">
-        <label for="payment-method-cash">Cash</label>
-        
+        <label for="payment-method">Payment Method:</label><br>
+        <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required>
+        <label for="payment-method-cash">Cash</label><br>
+        <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
+        <label for="payment-method-stripe">Credit Card (via Stripe)</label><br>
+
         <input type="hidden" name="class" value="Lady's Ladies Monday 4-Class Pack">
         <button type="submit" class="cta-button">Sign Up</button>
     </form>
 
-    <!-- Stripe Payment Button -->
-    <form action="https://buy.stripe.com/8wM4gjfgU4AzbKweUU" method="GET">
-        <button type="submit" class="cta-button">Pay with Credit Card </button>
-    </form>
+    <!-- Optional Stripe Payment Button if user selects Stripe -->
+    <button id="stripe-button" class="cta-button" style="display:none;" onclick="redirectToStripe()">Pay with Credit Card</button>
 </div>
+
+<script>
+    const form = document.getElementById('signup-form');
+    const stripeButton = document.getElementById('stripe-button');
+    
+    form.addEventListener('submit', function(event) {
+        const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+
+        if (paymentMethod === 'credit-card-stripe') {
+            // Prevent form submission to Formspree if Stripe is chosen
+            event.preventDefault();
+            
+            // Show Stripe button for payment
+            stripeButton.style.display = 'inline-block';
+        }
+    });
+
+    function redirectToStripe() {
+        window.location.href = "https://checkout.stripe.com/pay/YOUR_STRIPE_CHECKOUT_URL";
+    }
+</script>
+
 
 
                 <!-- Wednesday Class Pack -->
