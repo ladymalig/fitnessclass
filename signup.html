@@ -25,27 +25,31 @@
                 <h2>Lady's Ladies</h2>
 
                 <!-- Monday Class Pack -->
-                <div class="class-pack">
-                    <h3>Monday 9:00 am - 4 Class Pack</h3>
+            <div class="class-pack">
+                <h3>Monday 9:00 am - 4 Class Pack</h3>
                     <p>Dates: October 7, 14, 21, 28</p>
                     <p>Price: $32.00 ($8.00 per class)</p>
-                    <form action="https://formspree.io/f/mvgpnvvl" method="POST">
-                        <label for="name-monday">Name:</label>
-                        <input type="text" id="name-monday" name="name" required>
+                        <form action="https://formspree.io/f/mvgpnvvl" method="POST">
+                            <label for="name-monday">Name:</label>
+                            <input type="text" id="name-monday" name="name" required>
 
-                        <label for="email-monday">Email:</label>
-                        <input type="email" id="email-monday" name="email" required>
+        <label for="email-monday">Email:</label>
+        <input type="email" id="email-monday" name="email" required>
 
-                        <label for="payment-method-monday">Payment Method:</label>
-                        <select id="payment-method-monday" name="payment-method" required>
-                            <option value="cash">Cash</option>
-                            <option value="paypal">PayPal</option>
-                        </select>
+        <label for="payment-method-monday">Payment Method:</label>
+        <input type="checkbox" id="payment-method-cash" name="payment-method" value="cash">
+        <label for="payment-method-cash">Cash</label>
+        
+        <input type="hidden" name="class" value="Lady's Ladies Monday 4-Class Pack">
+        <button type="submit" class="cta-button">Sign Up</button>
+    </form>
 
-                        <input type="hidden" name="class" value="Lady's Ladies Monday 4-Class Pack">
-                        <button type="submit" class="cta-button">Sign Up</button>
-                    </form>
-                </div>
+    <!-- Stripe Payment Button -->
+    <form action="https://buy.stripe.com/8wM4gjfgU4AzbKweUU" method="GET">
+        <button type="submit" class="cta-button">Pay with Credit Card </button>
+    </form>
+</div>
+
 
                 <!-- Wednesday Class Pack -->
                 <div class="class-pack">
