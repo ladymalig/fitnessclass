@@ -85,16 +85,41 @@
                         <label for="email-wednesday">Your Email:</label>
                         <input type="email" id="email-wednesday" name="email" required>
 
-                        <label for="payment-method-wednesday">Payment Method:</label>
-                        <select id="payment-method-wednesday" name="payment-method" required>
-                            <option value="cash">Cash</option>
-                            <option value="paypal">PayPal</option>
-                        </select>
+                        <label for="payment-method">Payment Method:</label><br>
+        <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required>
+        <label for="payment-method-cash">Cash</label><br>
+        <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
+        <label for="payment-method-stripe">Credit Card (via Stripe)</label><br>
 
-                        <input type="hidden" name="class" value="Lady's Ladies Wednesday 5-Class Pack">
-                        <button type="submit" class="cta-button">Sign Up</button>
-                    </form>
-                </div>
+        <input type="hidden" name="class" value="Lady's Ladies Monday 4-Class Pack">
+        <button type="submit" class="cta-button">Sign Up</button>
+    </form>
+
+    <!-- Optional Stripe Payment Button if user selects Stripe -->
+    <button id="stripe-button" class="cta-button" style="display:none;" onclick="redirectToStripe()">Pay with Credit Card</button>
+</div>
+
+<script>
+    const form = document.getElementById('signup-form');
+    const stripeButton = document.getElementById('stripe-button');
+    
+    form.addEventListener('submit', function(event) {
+        const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+
+        if (paymentMethod === 'credit-card-stripe') {
+            // Prevent form submission to Formspree if Stripe is chosen
+            event.preventDefault();
+            
+            // Show Stripe button for payment
+            stripeButton.style.display = 'inline-block';
+        }
+    });
+
+    function redirectToStripe() {
+        window.location.href = "https://buy.stripe.com/3cs1475Gk8QPg0M3cd";
+    }
+</script>
+
 
                 <!-- Monday & Wednesday Class Pack -->
                 <div class="class-pack">
@@ -107,18 +132,40 @@
 
                         <label for="email-combo">Your Email:</label>
                         <input type="email" id="email-combo" name="email" required>
+  <label for="payment-method">Payment Method:</label><br>
+        <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required>
+        <label for="payment-method-cash">Cash</label><br>
+        <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
+        <label for="payment-method-stripe">Credit Card (via Stripe)</label><br>
 
-                        <label for="payment-method-combo">Payment Method:</label>
-                        <select id="payment-method-combo" name="payment-method" required>
-                            <option value="cash">Cash</option>
-                            <option value="paypal">PayPal</option>
-                        </select>
+        <input type="hidden" name="class" value="Lady's Ladies Monday 4-Class Pack">
+        <button type="submit" class="cta-button">Sign Up</button>
+    </form>
 
-                        <input type="hidden" name="class" value="Lady's Ladies Monday & Wednesday 9-Class Pack">
-                        <button type="submit" class="cta-button">Sign Up</button>
-                    </form>
-                </div>
-            </div>
+    <!-- Optional Stripe Payment Button if user selects Stripe -->
+    <button id="stripe-button" class="cta-button" style="display:none;" onclick="redirectToStripe()">Pay with Credit Card</button>
+</div>
+
+<script>
+    const form = document.getElementById('signup-form');
+    const stripeButton = document.getElementById('stripe-button');
+    
+    form.addEventListener('submit', function(event) {
+        const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+
+        if (paymentMethod === 'credit-card-stripe') {
+            // Prevent form submission to Formspree if Stripe is chosen
+            event.preventDefault();
+            
+            // Show Stripe button for payment
+            stripeButton.style.display = 'inline-block';
+        }
+    });
+
+    function redirectToStripe() {
+        window.location.href = "https://buy.stripe.com/8wMfZ1c4I5ED5m86oq";
+    }
+</script>
 
             <!-- Lady's Gentlemen Section -->
             <div class="class-pack-section class-pack-section-gentlemen blue-section">
@@ -136,20 +183,40 @@
                         <label for="email-gentlemen-monday">Your Email:</label>
                         <input type="email" id="email-gentlemen-monday" name="email" required>
 
-                        <label for="payment-method-gentlemen-monday">Payment Method:</label>
-                        <select id="payment-method-gentlemen-monday" name="payment-method" required>
-                            <option value="cash">Cash</option>
-                            <option value="paypal">PayPal</option>
-                        </select>
+                               <label for="payment-method">Payment Method:</label><br>
+        <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required>
+        <label for="payment-method-cash">Cash</label><br>
+        <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
+        <label for="payment-method-stripe">Credit Card (via Stripe)</label><br>
 
-                        <input type="hidden" name="class" value="Lady's Gentlemen Monday 4-Class Pack">
-                        <button type="submit" class="cta-button">Sign Up</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+        <input type="hidden" name="class" value="Lady's Ladies Monday 4-Class Pack">
+        <button type="submit" class="cta-button">Sign Up</button>
+    </form>
 
-         <div class="class-pack-section class-pack-section-gentlemen blue-section">
+    <!-- Optional Stripe Payment Button if user selects Stripe -->
+    <button id="stripe-button" class="cta-button" style="display:none;" onclick="redirectToStripe()">Pay with Credit Card</button>
+</div>
+
+<script>
+    const form = document.getElementById('signup-form');
+    const stripeButton = document.getElementById('stripe-button');
+    
+    form.addEventListener('submit', function(event) {
+        const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+
+        if (paymentMethod === 'credit-card-stripe') {
+            // Prevent form submission to Formspree if Stripe is chosen
+            event.preventDefault();
+            
+            // Show Stripe button for payment
+            stripeButton.style.display = 'inline-block';
+        }
+    });
+
+    function redirectToStripe() {
+        window.location.href = "https://buy.stripe.com/8wM4gjfgU4AzbKweUU";
+    }
+</script>
                
 
                 <!-- Monday Class Pack -->
