@@ -38,14 +38,19 @@
         <input type="email" id="email-monday" name="email" required>
 
         <label for="payment-method">Payment Method:</label><br>
+       <form>
+    <div class="radio-group">
         <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required>
-        <label for="payment-method-cash">Cash</label><br>
+        <label for="payment-method-cash">Cash</label>
+    </div>
+    <div class="radio-group">
         <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
-        <label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay </label><br>
+        <label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay</label>
+    </div>
 
-        <input type="hidden" name="class" value="Lady's Ladies Monday 4-Class Pack">
-        <button type="submit" class="cta-button">Sign Up</button>
-    </form>
+    <input type="hidden" name="class" value="Lady's Ladies Monday 4-Class Pack">
+    <button type="submit" class="cta-button">Sign Up</button>
+</form>
 
     <!-- Optional Stripe Payment Button if user selects Stripe -->
     <button id="stripe-button" class="cta-button" style="display:none;" onclick="redirectToStripe()">Pay Here</button>
@@ -85,12 +90,17 @@
     <input type="email" id="email-combo" name="email" required>
 
     <label for="payment-method">Payment Method:</label><br>
-    <input type="radio" id="payment-method-cash-combo" name="payment-method" value="cash" required>
-    <label for="payment-method-cash-combo">Cash</label><br>
-    <input type="radio" id="payment-method-stripe-combo" name="payment-method" value="credit-card-stripe" required>
-    <label for="payment-method-stripe-combo">Credit Card | Apple Pay | Amazon Pay</label><br>
+    <form>
+    <div class="radio-group">
+        <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required>
+        <label for="payment-method-cash">Cash</label>
+    </div>
+    <div class="radio-group">
+        <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
+        <label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay</label>
+    </div>
 
-    <input type="hidden" name="class" value="Lady's Ladies Combo 9-Class Pack">
+    <input type="hidden" name="class" value="Lady's Ladies Monday 4-Class Pack">
     <button type="submit" class="cta-button">Sign Up</button>
 </form>
 
@@ -128,12 +138,18 @@
     <input type="email" id="email-wednesday" name="email" required>
 
     <label for="payment-method">Payment Method:</label><br>
-    <input type="radio" id="payment-method-cash-wednesday" name="payment-method" value="cash" required>
-    <label for="payment-method-cash-wednesday">Cash</label><br>
-    <input type="radio" id="payment-method-stripe-wednesday" name="payment-method" value="credit-card-stripe" required>
-    <label for="payment-method-stripe-wednesday">Credit Card | Apple Pay | Amazon Pay</label><br>
+                
+                     <form>
+    <div class="radio-group">
+        <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required>
+        <label for="payment-method-cash">Cash</label>
+    </div>
+    <div class="radio-group">
+        <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
+        <label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay</label>
+    </div>
 
-    <input type="hidden" name="class" value="Lady's Ladies Wednesday 5-Class Pack">
+    <input type="hidden" name="class" value="Lady's Ladies Monday 4-Class Pack">
     <button type="submit" class="cta-button">Sign Up</button>
 </form>
 
@@ -176,14 +192,19 @@
         <input type="email" id="email-gentlemen-monday" name="email" required>
 
         <label for="payment-method">Payment Method:</label><br>
-        <input type="radio" id="payment-method-cash-mens-monday" name="payment-method" value="cash" required>
-        <label for="payment-method-cash-mens-monday">Cash</label><br>
-        <input type="radio" id="payment-method-stripe-mens-monday" name="payment-method" value="credit-card-stripe" required>
-        <label for="payment-method-stripe-mens-monday">Credit Card | Apple Pay | Amazon Pay</label><br>
+        <form>
+    <div class="radio-group">
+        <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required>
+        <label for="payment-method-cash">Cash</label>
+    </div>
+    <div class="radio-group">
+        <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
+        <label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay</label>
+    </div>
 
-        <input type="hidden" name="class" value="Lady's Gentlemen Monday 4-Class Pack">
-        <button type="submit" class="cta-button">Sign Up</button>
-    </form>
+    <input type="hidden" name="class" value="Lady's Ladies Monday 4-Class Pack">
+    <button type="submit" class="cta-button">Sign Up</button>
+</form>
 
     <!-- Optional Stripe Payment Button if user selects Stripe -->
     <button id="stripe-button-mens-monday" class="cta-button" style="display:none;" onclick="redirectToStripeMensMonday()">Pay Here</button>
