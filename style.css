@@ -115,11 +115,11 @@ nav ul li a:hover {
 
 /* Blue for Lady's Gentlemen */
 .blue-section {
-    background-color: #e0f7fa; /* Light blue background */
+    background-color: #5c91c4; /* Light blue background */
 }
 
 .blue-section h2 {
-    color: #00796b; /* Dark teal for header */
+    color: white; /* Dark teal for header */
 }
 
 .blue-section .cta-button {
@@ -241,6 +241,15 @@ form input, form select {
     margin-bottom: 1rem;
 }
 
+.home-image {
+    width: 100%; /* Make the image responsive */
+    max-width: 700px; /* Set a maximum width to prevent large images */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
 .image-container p {
     font-size: 1.2rem;
     color: #555;
@@ -269,8 +278,8 @@ form input, form select {
 
 .cert-image {
     margin: 10px;
-<<<<<<< HEAD
+
 }
-=======
+
 }
->>>>>>> b27e17a (Updated files and added flyer.png)
+
