@@ -280,10 +280,9 @@ form input, form select {
 
 .home-image {
     width: 100%; /* Make the image responsive */
-    max-width: 900px; /* Set a maximum width to prevent large images */
+    max-width: 1000px; /* Set a maximum width to prevent large images */
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
 }
 
