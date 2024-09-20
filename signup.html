@@ -24,7 +24,6 @@
 
  <div class="class-pack-section class-pack-section-ladies pink-section">
             
-
 <!-- Combined Class Pack -->
 <div class="class-pack">
     <h2>Lady's Ladies Monday & Wednesday 9:00 AM</h2>
@@ -63,13 +62,12 @@
             <label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay</label>
         </div>
 
-        <input type="hidden" name="class" value="">
+        <!-- Hidden input to capture selected class pack -->
+        <input type="hidden" id="selected-class-pack" name="selected-class-pack">
 
         <!-- Add a hidden input for redirect URL -->
         <input type="hidden" name="_redirect" value="https://workoutclass.netlify.app/thank.html">
 
-        <input type="hidden" name="class" value="">
-        
         <!-- Regular Sign Up button -->
         <button type="submit" id="signup-button" class="cta-button">Sign Up</button>
 
@@ -104,6 +102,7 @@
         const classDetailsDiv = document.getElementById('class-details');
         const classDates = document.getElementById('class-dates');
         const classPrice = document.getElementById('class-price');
+        const hiddenInput = document.getElementById('selected-class-pack'); // Hidden input field
 
         // Ensure that a valid class pack is selected
         if (selectedValue !== "" && classInfo[selectedValue]) {
@@ -111,6 +110,9 @@
             classDates.innerText = `Dates: ${classInfo[selectedValue].dates}`;
             classPrice.innerText = `Price: ${classInfo[selectedValue].price}`;
             classDetailsDiv.style.display = 'block';
+
+            // Update hidden input value with the selected class pack
+            hiddenInput.value = selectedValue;
         } else {
             // Hide the details if no valid selection is made
             classDetailsDiv.style.display = 'none';
@@ -170,11 +172,10 @@
 
 
 
-
             
             <!-- Lady's Gentlemen Section -->
  <!-- Men's Monday Class Pack -->
-<!-- <div class="class-pack-section class-pack-section-ladies blue-section">
+<div class="class-pack-section class-pack-section-ladies blue-section">
     <h2>Lady's Gentlemen Monday 10:00 AM</h2>
     
     <p>Dates: October 7, 14, 21, 28 (4 classes)</p>
@@ -200,16 +201,16 @@
         <input type="hidden" name="class" value="Lady's Gentlemen Monday 4-Class Pack">
 
           <!-- Add a hidden input for redirect URL -->
-        <!-- <input type="hidden" name="_redirect" value="https://workoutclass.netlify.app/thank.html">
+        <input type="hidden" name="_redirect" value="https://workoutclass.netlify.app/thank.html">
 
         <input type="hidden" name="class" value="">
         
         
         <!-- Regular Sign Up button -->
-      <!--  <button type="submit" id="signup-button-monday" class="cta-button">Sign Up</button>
+      <button type="submit" id="signup-button-monday" class="cta-button">Sign Up</button>
 
         <!-- Stripe button (hidden by default) -->
-     <!--   <button id="stripe-button-monday" class="cta-button" style="display:none;">Pay Here and Sign Up</button>
+       <button id="stripe-button-monday" class="cta-button" style="display:none;">Pay Here and Sign Up</button>
     </form>
 </div> 
         
