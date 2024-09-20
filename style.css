@@ -78,7 +78,7 @@ nav ul li a:hover {
     color: #2d6cae; /* Slightly darker blue on hover */
 }
 
-/* Class Pack Container */
+/* General Class Pack Container */
 .class-pack-container {
     display: flex;
     flex-wrap: wrap;
@@ -87,23 +87,23 @@ nav ul li a:hover {
     padding: 2rem;
 }
 
-/* Class Pack Section */
+/* General Class Pack Section */
 .class-pack-section {
     flex: 1;
     padding: 2rem;
     border-radius: 8px;
+    background-color: #ffffff; /* White background for both sections */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 /* Pink for Lady's Ladies */
 .pink-section {
-    background-color: #ffe4e6; /* Light pink background */
+    border: 20px solid #eba0af; /* Pink border for women's section */
 }
 
-.pink-section h2 {
-    color: #d81b60; /* Dark pink for header */
-}
+
 
 .pink-section .cta-button {
     background-color: #d81b60; /* Pink button for women's classes */
@@ -113,43 +113,80 @@ nav ul li a:hover {
     background-color: #b0003a; /* Darker pink on hover */
 }
 
-/* Blue for Lady's Gentlemen */
+/* Blue for Men's Section */
 .blue-section {
-    background-color: #5c91c4; /* Light blue background */
-}
-
-.blue-section h2 {
-    color: white; /* Dark teal for header */
+    border: 20px solid #92b8d4; /* Blue border for men's section */
 }
 
 .blue-section .cta-button {
-    background-color: #00796b; /* Teal button for men's classes */
+    background-color: #1e88e5; /* Blue button for men's classes */
 }
 
 .blue-section .cta-button:hover {
-    background-color: #005f56; /* Darker teal on hover */
+    background-color: #1565c0; /* Darker blue on hover */
 }
 
-/* Each Class Pack */
-.class-pack {
-    background-color: #ffffff; /* White background for each class pack */
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.5rem;
+
+/* Orange for Free Section */
+.orange-section {
+    border: 10px solid #deb8a0; /*  border  */
 }
 
-.class-pack h3 {
-    font-size: 1.6rem;
-    color: #555;
-    margin-bottom: 1rem;
+.orange-section .cta-button {
+    background-color: #f06b43; /* button */
 }
 
-.class-pack p {
-    color: #777;
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+.orange-section .cta-button:hover {
+    background-color: #f23e07; /*  hover */
 }
+
+/* Mobile Optimization for Form Fields and Buttons */
+@media only screen and (max-width: 768px) {
+    form input, form select, form button {
+        width: 100%; /* Full width for mobile devices */
+        padding: 12px;
+        font-size: 1.1rem;
+        min-height: 44px; /* Touch-friendly fields */
+    }
+
+    .cta-button {
+        padding: 12px;
+        font-size: 1.2rem;
+    }
+}
+
+/* dropdown menu */
+#class-pack-select {
+    font-size: 1.5rem; /* Increase the font size */
+    padding: 12px; /* Increase padding for more space inside */
+    width: 100%; /* Ensure it stretches across the width of the container */
+    height: 40px; /* Adjust the height for better visibility */
+    border-radius: 8px; /* Optional: add rounded corners */
+    border: 2px solid #ccc; /* Optional: thicker border for better visibility */
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+
+/* Optional: Customize the dropdown options */
+#class-pack-select option {
+    font-size: 1.2rem; /* Increase option font size */
+    padding: 10px; /* Add padding inside options */
+}
+
+/* Class Details Styling */
+#class-details {
+    font-size: 1.5rem; /* Increase the size of the class details */
+    margin-top: 15px; /* Add some spacing above the details */
+}
+
+#class-details h4 {
+    font-size: 1.5rem; /* Increase the size of the "Class Details" heading */
+    margin-bottom: 10px; /* Add spacing below the heading */
+}
+
+#class-dates, #class-price {
+    font-size: 1.25rem; /* Increase the size of the dates and price text */
+}
+
 
 /* Form Styles */
 form {
@@ -243,7 +280,7 @@ form input, form select {
 
 .home-image {
     width: 100%; /* Make the image responsive */
-    max-width: 700px; /* Set a maximum width to prevent large images */
+    max-width: 900px; /* Set a maximum width to prevent large images */
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -270,7 +307,7 @@ form input, form select {
 }
 
 .trainer-photo, .cert-photo {
-    width: 250px;
+    width: 300px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -280,6 +317,6 @@ form input, form select {
     margin: 10px;
 
 }
-
 }
+
 
