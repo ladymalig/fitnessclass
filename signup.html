@@ -173,11 +173,7 @@ document.getElementById('email-combined').addEventListener('input', validateForm
 </script>
 </div>
 
-
             <!-- Lady's Gentlemen Section -->
-            
-                
-
  <!-- Men's Monday Class Pack -->
 <div class="class-pack-section class-pack-section-ladies blue-section">
     <h2>Lady's Gentlemen Monday 10:00 AM</h2>
@@ -216,22 +212,25 @@ document.getElementById('email-combined').addEventListener('input', validateForm
         const signUpButton = document.getElementById('sign-up-button-mens-monday');
         const stripeButton = document.getElementById('stripe-button-mens-monday');
 
+        // If Stripe is selected, hide the sign-up button and show the Stripe button
         if (stripeOption) {
             signUpButton.style.display = 'none';
             stripeButton.style.display = 'inline-block';
         } else {
+            // If cash is selected, show the sign-up button and hide the Stripe button
             signUpButton.style.display = 'inline-block';
             stripeButton.style.display = 'none';
         }
     }
 
-    
     function redirectToStripeMensMonday() {
         window.location.href = "https://buy.stripe.com/3cs3cfd8M3wv6qcaEI"; // Replace with your actual Stripe URL
     }
-    
+
+    // Trigger toggleButtons on page load to ensure correct button visibility
+    window.onload = toggleButtons;
 </script>
-  </div>
+
 
              <!-- Trial Class Pack -->
              <div class="class-pack-section class-pack-section-ladies orange-section">
