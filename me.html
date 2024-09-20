@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<link rel="stylesheet" href="style.css">
 <body>
 
-  <header>
-        <nav aria-label="Main navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
-		<li><a href="me.html">Trainer</a></li>
-                
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="me.html">Trainer</a></li>
+        </ul>
+    </nav>
+</header>
 
 <footer id="contact" class="footer-section">
     <h1>Meet The Trainer</h1>
     <div class="trainer-container">
-        <!-- Trainer Photo -->
         <div class="trainer-image">
             <img src="me.jpeg" alt="Lady Malig" class="trainer-photo">
-	
             <p>Lady Malig</p>
-		<p>Hello everyone! My name is Lady Malig. I am Certified Personal Trainer and Specialist in Senior Fitness. I have over 5 years working in fitness with an emphasis on functional training and mobility. I am also a US Air Force and US Air National Guard Veteran. Currently I am a full time student at Kennesaw State University, majoring in Information Technology and Cybersecurity. I look forward to meeting you all!</p>
-		<p>If you have any questions, please feel free to send me an email at <a href="mailto:ladysmalig@gmail.com">ladysmalig@gmail.com</a></p>
-		
-		<p><a href="pt.jpg">ISSA Certified Personal Trainer</a></p>
-		<p><a href="senior.jpg">ISSA Specialist in Senior Fitness</a></p>
-  
-		
-		
-        
-  </div>
+            <p>Hello everyone! My name is Lady Malig. I am a Certified Personal Trainer and Specialist in Senior Fitness. I have over 5 years working in fitness with an emphasis on functional training and mobility. I am also a US Air Force and US Air National Guard Veteran. Currently, I am a full-time student at Kennesaw State University, majoring in Information Technology and Cybersecurity. I look forward to meeting you all!</p>
+            <p>If you have any questions, please feel free to send me an email at <a href="mailto:ladysmalig@gmail.com">ladysmalig@gmail.com</a></p>
+            <p><a href="pt.jpg">ISSA Certified Personal Trainer</a></p>
+            <p><a href="senior.jpg">ISSA Specialist in Senior Fitness</a></p>
+        </div>
+
+        <!-- Contact Form with Formspree -->
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/mzzplewk" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Your Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
 </footer>
+
 </body>
 </html>
