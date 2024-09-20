@@ -228,6 +228,17 @@ document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
         }
     });
 });
+    // Function to validate form fields
+function validateForm() {
+    const nameField = document.getElementById('name-combined');
+    const emailField = document.getElementById('email-combined');
+
+    if (nameField.value.trim() !== '' && emailField.value.trim() !== '') {
+        stripeButton.disabled = false; 
+    } else {
+        stripeButton.disabled = true;
+    }
+}
 
     function redirectToStripeMensMonday() {
         window.location.href = "https://buy.stripe.com/3cs3cfd8M3wv6qcaEI"; // Replace with your actual Stripe URL
