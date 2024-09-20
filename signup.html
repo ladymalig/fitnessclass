@@ -123,47 +123,53 @@
     const signupButton = document.getElementById('signup-button');
     const classInput = document.querySelector('input[name="class"]');
     
-    // Handle radio selection for class packs and payment methods
-    document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
-        input.addEventListener('change', function() {
-            if (this.value === 'credit-card-stripe') {
-                stripeButton.style.display = 'inline-block';
-                signupButton.style.display = 'none';
-                validateForm();
-            } else {
-                stripeButton.style.display = 'none';
-                signupButton.style.display = 'inline-block';
-            }
-        });
-    });
-
-    // Function to validate form fields
-    function validateForm() {
-        const nameField = document.getElementById('name-combined');
-        const emailField = document.getElementById('email-combined');
-
-        if (nameField.value.trim() !== '' && emailField.value.trim() !== '') {
-            stripeButton.disabled = false; 
+    // Handle payment method selection
+document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
+    input.addEventListener('change', function() {
+        if (this.value === 'credit-card-stripe') {
+            stripeButton.style.display = 'inline-block';
+            signupButton.style.display = 'none';
+            validateForm(); // Validate form when payment method changes
         } else {
-            stripeButton.disabled = true;
-        }
-    }
-
-    // Redirect based on class pack choice
-    stripeButton.addEventListener('click', function() {
-        const selectedClassPack = document.querySelector('input[name="class-pack"]:checked').value;
-        if (selectedClassPack === '9-class') {
-            window.location.href = "https://buy.stripe.com/fZe8wz6Ko1on8ykcMP"; // 9-Class Pack Stripe URL
-        } else if (selectedClassPack === '4-class') {
-            window.location.href = "https://buy.stripe.com/3cs3cfd8M3wv6qcaEI"; // 4-Class Pack Stripe URL
-	} else if (selectedClassPack === '5-class') {
-            window.location.href = "https://buy.stripe.com/6oEeUX3yc7ML29WfZ3"; // 5-Class Pack Stripe URL
+            stripeButton.style.display = 'none';
+            signupButton.style.display = 'inline-block';
         }
     });
+});
 
-    // Real-time validation
-    document.getElementById('name-combined').addEventListener('input', validateForm);
-    document.getElementById('email-combined').addEventListener('input', validateForm);
+// Function to validate form fields
+function validateForm() {
+    const nameField = document.getElementById('name-combined');
+    const emailField = document.getElementById('email-combined');
+
+    if (nameField.value.trim() !== '' && emailField.value.trim() !== '') {
+        stripeButton.disabled = false; 
+    } else {
+        stripeButton.disabled = true;
+    }
+}
+
+// Redirect based on class pack choice
+stripeButton.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get the selected class pack from the dropdown
+    const selectedClassPack = document.getElementById('class-pack-select').value;
+    
+    // Ensure a valid selection
+    if (selectedClassPack === '9-class') {
+        window.location.href = "https://buy.stripe.com/fZe8wz6Ko1on8ykcMP"; // 9-Class Pack Stripe URL
+    } else if (selectedClassPack === '4-class') {
+        window.location.href = "https://buy.stripe.com/3cs3cfd8M3wv6qcaEI"; // 4-Class Pack Stripe URL
+    } else if (selectedClassPack === '5-class') {
+        window.location.href = "https://buy.stripe.com/6oEeUX3yc7ML29WfZ3"; // 5-Class Pack Stripe URL
+    }
+});
+
+// Real-time validation
+document.getElementById('name-combined').addEventListener('input', validateForm);
+document.getElementById('email-combined').addEventListener('input', validateForm);
+
 </script>
 </div>
 
