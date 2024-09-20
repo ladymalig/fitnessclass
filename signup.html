@@ -211,6 +211,13 @@
             stripeButton.style.display = 'none';
         }
     }
+     // Add event listener for Stripe button
+    document.getElementById('stripe-button-monday').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        // Redirect to Stripe payment page
+        window.location.href = "https://buy.stripe.com/3cs3cfd8M3wv6qcaEI"; // Replace with your actual Stripe URL for this class
+    });
 </script>
 
 
