@@ -20,171 +20,163 @@
     <section class="signup-section">
         <div class="container">
             <!-- Lady's Ladies Section -->
-            <div class="class-pack-section class-pack-section-ladies pink-section">
-                <h2>Lady's Ladies</h2>
 
-               <!-- Monday Wednesday Class Pack -->
-<div class="class-pack">
-     <h3>Monday & Wednesday 9:00 AM - 9 Class Pack</h3>
-    <p>Dates: October 2, 7, 9, 14, 16, 21, 23, 28, 30</p>
-     <p>Price: $72.00 ($8.00 per class)</p>  
-    
-    <form id="signup-form" action="https://formspree.io/f/mvgpnvvl" method="POST">
-        <label for="name-monday">Name:</label>
-        <input type="text" id="name-monday" name="name" required>
-
-        <label for="email-monday">Email:</label>
-        <input type="email" id="email-monday" name="email" required>
-
-        <label for="payment-method">Payment Method:</label><br>
-       <form>
-    <div class="radio-group">
-        <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required>
-        <label for="payment-method-cash">Cash</label>
-    </div>
-    <div class="radio-group">
-        <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
-        <label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay</label>
-    </div>
-
-    <input type="hidden" name="class" value="Lady's Ladies Monday 4-Class Pack">
-    <button type="submit" class="cta-button">Sign Up</button>
-</form>
-
-    <!-- Optional Stripe Payment Button if user selects Stripe -->
-    <button id="stripe-button" class="cta-button" style="display:none;" onclick="redirectToStripe()">Pay Here</button>
-</div>
-
-<script>
-    const form = document.getElementById('signup-form');
-    const stripeButton = document.getElementById('stripe-button');
-    
-    form.addEventListener('submit', function(event) {
-        const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
-
-        if (paymentMethod === 'credit-card-stripe') {
-            // Prevent form submission to Formspree if Stripe is chosen
-            event.preventDefault();
+ <div class="class-pack-section class-pack-section-ladies pink-section">
             
-            // Show Stripe button for payment
-            stripeButton.style.display = 'inline-block';
-        }
-    });
 
-    function redirectToStripe() {
-        window.location.href = "https://buy.stripe.com/fZe8wz6Ko1on8ykcMP";
-    }
-</script>
+<!-- Combined Class Pack -->
+<div class="class-pack">
+<h2>Lady's Ladies Monday & Wednesday 9:00 AM</h2>
 
-                <!-- Monday -->
-                <div class="class-pack">
-                   <h3>Monday 9:00 am - 4 Class Pack</h3>
-    <p>Dates: October 7, 14, 21, 28</p>
-    <p>Price: $33.00 ($8.25 per class)</p>
 
- <form id="signup-form-combo" action="https://formspree.io/f/mvgpnvvl" method="POST">
-    <label for="name-combo">Name:</label>
-    <input type="text" id="name-combo" name="name" required>
+<!-- Dropdown Menu for Class Pack Selection -->
 
-    <label for="email-combo">Email:</label>
-    <input type="email" id="email-combo" name="email" required>
 
-    <label for="payment-method">Payment Method:</label><br>
-    <form>
-    <div class="radio-group">
-        <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required>
-        <label for="payment-method-cash">Cash</label>
-    </div>
-    <div class="radio-group">
-        <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
-        <label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay</label>
-    </div>
+<select id="class-pack-select" name="class-pack" required>
+    <option value="" disabled selected>Select a class pack</option>
+    <option value="9-class">MONDAY AND WEDNESDAY </option>
+    <option value="4-class">MONDAY ONLY </option>
+    <option value="5-class">WEDNESDAY ONLY </option>
+</select>
 
-    <input type="hidden" name="class" value="Lady's Ladies Monday 4-Class Pack">
-    <button type="submit" class="cta-button">Sign Up</button>
-</form>
-
-<button id="stripe-button-combo" class="cta-button" style="display:none;" onclick="redirectToStripeCombo()">Pay Here</button>
+<!-- Placeholder for showing selected class details -->
+<div id="class-details" style="margin-top: 15px; display: none;">
+    <h4>Class Details:</h4>
+    <p id="class-dates"></p>
+    <p id="class-price"></p>
 </div>
-                    
+
 <script>
-    const formCombo = document.getElementById('signup-form-combo');
-    const stripeButtonCombo = document.getElementById('stripe-button-combo');
-    
-    formCombo.addEventListener('submit', function(event) {
-        const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
-        
-        if (paymentMethod === 'credit-card-stripe') {
-            event.preventDefault();
-            stripeButtonCombo.style.display = 'inline-block';
+    // Object to store class details
+    const classInfo = {
+        '9-class': {
+            dates: 'October 2, 7, 9, 14, 16, 21, 23, 28, 30',
+            price: '$72.00 (9 classes, $8.00 per class)',
+        },
+        '4-class': {
+            dates: 'October 7, 14, 21, 28',
+            price: '$33.00 (4 classes, $8.25 per class)',
+        },
+        '5-class': {
+            dates: 'October 2, 9, 16, 23, 30',
+            price: '$41.25 (5 classes, $8.25 per class)',
+        }
+    };
+
+    // Event listener for dropdown change
+    document.getElementById('class-pack-select').addEventListener('change', function() {
+        const selectedValue = this.value;
+        const classDetailsDiv = document.getElementById('class-details');
+        const classDates = document.getElementById('class-dates');
+        const classPrice = document.getElementById('class-price');
+
+        // Ensure that a valid class pack is selected
+        if (selectedValue !== "" && classInfo[selectedValue]) {
+            // Show the class details
+            classDates.innerText = `Dates: ${classInfo[selectedValue].dates}`;
+            classPrice.innerText = `Price: ${classInfo[selectedValue].price}`;
+            classDetailsDiv.style.display = 'block';
+        } else {
+            // Hide the details if no valid selection is made
+            classDetailsDiv.style.display = 'none';
         }
     });
-
-    function redirectToStripeCombo() {
-        window.location.href = "https://buy.stripe.com/3cs3cfd8M3wv6qcaEI";
-    }
 </script>
 
-                <!-- Wednesday  -->
-                <div class="class-pack">
-                    <h3>Wednesday 9:00 am - 5 Class Pack</h3>
-                    <p>Dates: October 2, 9, 16, 23, 30</p>
-                    <p>Price: $41.25 ($8.25 per class)</p>
-        
-                 <form id="signup-form-wednesday" action="https://formspree.io/f/mvgpnvvl" method="POST">
-    <label for="name-wednesday">Name:</label>
-    <input type="text" id="name-wednesday" name="name" required>
+</script>
 
-    <label for="email-wednesday">Email:</label>
-    <input type="email" id="email-wednesday" name="email" required>
 
-			 
-    <label for="payment-method">Payment Method:</label><br>
-                
-                     <form>
-    <div class="radio-group">
-        <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required>
-        <label for="payment-method-cash">Cash</label>
-    </div>
-    <div class="radio-group">
-        <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
-        <label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay</label>
-    </div>
+    <!-- Name and email fields -->
+    <form id="signup-form-combined" action="https://formspree.io/f/mvgpnvvl" method="POST">
+        <label for="name-combined">Name:</label>
+        <input type="text" id="name-combined" name="name" required>
 
-    <input type="hidden" name="class" value="Lady's Ladies Monday 4-Class Pack">
-    <button type="submit" class="cta-button">Sign Up</button>
-</form>
+        <label for="email-combined">Email:</label>
+        <input type="email" id="email-combined" name="email" required>
 
-<button id="stripe-button-wednesday" class="cta-button" style="display:none;" onclick="redirectToStripeWednesday()">Pay Here</button>
+        <!-- Payment Method radio buttons -->
+        <label for="payment-method">Payment Method:</label><br>
+        <div class="radio-group">
+            <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required>
+            <label for="payment-method-cash">Cash</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
+            <label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay</label>
+        </div>
+
+        <input type="hidden" name="class" value="">
+
+        <!-- Regular Sign Up button -->
+        <button type="submit" id="signup-button" class="cta-button">Sign Up</button>
+
+        <!-- Stripe button (hidden by default) -->
+        <button id="stripe-button" class="cta-button" style="display:none;" disabled>Pay Here and Sign Up</button>
+    </form>
 </div>
-                
+
 <script>
-    const formWednesday = document.getElementById('signup-form-wednesday');
-    const stripeButtonWednesday = document.getElementById('stripe-button-wednesday');
+    // Event listener for class pack and payment method selection
+    const classPackRadios = document.querySelectorAll('input[name="class-pack"]');
+    const stripeMessage = document.getElementById('stripe-message');
+    const stripeButton = document.getElementById('stripe-button');
+    const signupButton = document.getElementById('signup-button');
+    const classInput = document.querySelector('input[name="class"]');
     
-    formWednesday.addEventListener('submit', function(event) {
-        const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
-        
-        if (paymentMethod === 'credit-card-stripe') {
-            event.preventDefault();
-            stripeButtonWednesday.style.display = 'inline-block';
+    // Handle radio selection for class packs and payment methods
+    document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
+        input.addEventListener('change', function() {
+            if (this.value === 'credit-card-stripe') {
+                stripeButton.style.display = 'inline-block';
+                signupButton.style.display = 'none';
+                validateForm();
+            } else {
+                stripeButton.style.display = 'none';
+                signupButton.style.display = 'inline-block';
+            }
+        });
+    });
+
+    // Function to validate form fields
+    function validateForm() {
+        const nameField = document.getElementById('name-combined');
+        const emailField = document.getElementById('email-combined');
+
+        if (nameField.value.trim() !== '' && emailField.value.trim() !== '') {
+            stripeButton.disabled = false; 
+        } else {
+            stripeButton.disabled = true;
+        }
+    }
+
+    // Redirect based on class pack choice
+    stripeButton.addEventListener('click', function() {
+        const selectedClassPack = document.querySelector('input[name="class-pack"]:checked').value;
+        if (selectedClassPack === '9-class') {
+            window.location.href = "https://buy.stripe.com/fZe8wz6Ko1on8ykcMP"; // 9-Class Pack Stripe URL
+        } else if (selectedClassPack === '4-class') {
+            window.location.href = "https://buy.stripe.com/3cs3cfd8M3wv6qcaEI"; // 4-Class Pack Stripe URL
+	} else if (selectedClassPack === '5-class') {
+            window.location.href = "https://buy.stripe.com/6oEeUX3yc7ML29WfZ3"; // 5-Class Pack Stripe URL
         }
     });
 
-    function redirectToStripeWednesday() {
-        window.location.href = "https://buy.stripe.com/6oEeUX3yc7ML29WfZ3";
-    }
+    // Real-time validation
+    document.getElementById('name-combined').addEventListener('input', validateForm);
+    document.getElementById('email-combined').addEventListener('input', validateForm);
 </script>
+</div>
 
 
             <!-- Lady's Gentlemen Section -->
-            <div class="class-pack-section class-pack-section-gentlemen blue-section">
-                <h2>Lady's Gentlemen</h2>
+            
+                
 
              <!-- Men's Monday Class Pack -->
-<div class="class-pack">
-    <h3>Monday 10:00 am - 4 Class Pack</h3>
-    <p>Dates: October 7, 14, 21, 28</p>
+<div class="class-pack-section class-pack-section-ladies blue-section">
+<h2>Lady's Gentlemen Monday 10:00 AM </h2>
+    
+    <p>Dates: October 7, 14, 21, 28 (4 classes)</p>
     <p>Price: $33.00 ($8.25 per class)</p>
 	
         
@@ -235,14 +227,16 @@
     }
     
 </script>
+  </div>
 
-               
+             <!-- Trial Class Pack -->
+             <div class="class-pack-section class-pack-section-ladies orange-section">
 
-                <!-- Trial Class Pack -->
+
                 <div class="class-pack">
-                    <h3>Trial Class</h3>
+                    <h2> FREE Trial Class</h2>
                     <p>Dates: September 30</p>
-                    <p>Price: Free </p>
+                  
                     <form action="https://formspree.io/f/mvgpnvvl" method="POST">
                         <label for="name-gentlemen-monday">Your Name:</label>
                         <input type="text" id="name-gentlemen-monday" name="name" required>
@@ -253,9 +247,10 @@
                         <input type="hidden" name="class" value="Lady's Gentlemen Monday 4-Class Pack">
                         <button type="submit" class="cta-button">Sign Up</button>
                     </form>
-                </div>
+              
             </div>
         </div>
+
     </section>
 </body>
 
