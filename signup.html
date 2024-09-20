@@ -26,65 +26,22 @@
 
 <!-- Combined Class Pack -->
 <div class="class-pack">
-<h2>Lady's Ladies Monday & Wednesday 9:00 AM</h2>
+    <h2>Lady's Ladies Monday & Wednesday 9:00 AM</h2>
 
+    <!-- Dropdown Menu for Class Pack Selection -->
+    <select id="class-pack-select" name="class-pack" required>
+        <option value="" disabled selected>Select a class pack</option>
+        <option value="9-class">MONDAY AND WEDNESDAY</option>
+        <option value="4-class">MONDAY ONLY</option>
+        <option value="5-class">WEDNESDAY ONLY</option>
+    </select>
 
-<!-- Dropdown Menu for Class Pack Selection -->
-
-
-<select id="class-pack-select" name="class-pack" required>
-    <option value="" disabled selected>Select a class pack</option>
-    <option value="9-class">MONDAY AND WEDNESDAY </option>
-    <option value="4-class">MONDAY ONLY </option>
-    <option value="5-class">WEDNESDAY ONLY </option>
-</select>
-
-<!-- Placeholder for showing selected class details -->
-<div id="class-details" style="margin-top: 15px; display: none;">
-    <h4>Class Details:</h4>
-    <p id="class-dates"></p>
-    <p id="class-price"></p>
-</div>
-
-<script>
-    // Object to store class details
-    const classInfo = {
-        '9-class': {
-            dates: 'October 2, 7, 9, 14, 16, 21, 23, 28, 30',
-            price: '$69.75 (9 classes, $7.75 per class)',
-        },
-        '4-class': {
-            dates: 'October 7, 14, 21, 28',
-            price: '$33.00 (4 classes, $8.25 per class)',
-        },
-        '5-class': {
-            dates: 'October 2, 9, 16, 23, 30',
-            price: '$41.25 (5 classes, $8.25 per class)',
-        }
-    };
-
-    // Event listener for dropdown change
-    document.getElementById('class-pack-select').addEventListener('change', function() {
-        const selectedValue = this.value;
-        const classDetailsDiv = document.getElementById('class-details');
-        const classDates = document.getElementById('class-dates');
-        const classPrice = document.getElementById('class-price');
-
-        // Ensure that a valid class pack is selected
-        if (selectedValue !== "" && classInfo[selectedValue]) {
-            // Show the class details
-            classDates.innerText = `Dates: ${classInfo[selectedValue].dates}`;
-            classPrice.innerText = `Price: ${classInfo[selectedValue].price}`;
-            classDetailsDiv.style.display = 'block';
-        } else {
-            // Hide the details if no valid selection is made
-            classDetailsDiv.style.display = 'none';
-        }
-    });
-</script>
-
-
-
+    <!-- Placeholder for showing selected class details -->
+    <div id="class-details" style="margin-top: 15px; display: none;">
+        <h4>Class Details:</h4>
+        <p id="class-dates"></p>
+        <p id="class-price"></p>
+    </div>
 
     <!-- Name and email fields -->
     <form id="signup-form-combined" action="https://formspree.io/f/mvgpnvvl" method="POST">
@@ -116,62 +73,94 @@
 </div>
 
 <script>
-    // Event listener for class pack and payment method selection
-    const classPackRadios = document.querySelectorAll('input[name="class-pack"]');
-    const stripeMessage = document.getElementById('stripe-message');
-    const stripeButton = document.getElementById('stripe-button');
-    const signupButton = document.getElementById('signup-button');
-    const classInput = document.querySelector('input[name="class"]');
-    
-    // Handle payment method selection
-document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
-    input.addEventListener('change', function() {
-        if (this.value === 'credit-card-stripe') {
-            stripeButton.style.display = 'inline-block';
-            signupButton.style.display = 'none';
-            validateForm(); // Validate form when payment method changes
+    // Object to store class details
+    const classInfo = {
+        '9-class': {
+            dates: 'October 2, 7, 9, 14, 16, 21, 23, 28, 30',
+            price: '$69.75 (9 classes, $7.75 per class)',
+            stripeUrl: 'https://buy.stripe.com/00gdQTecQ4Az5m8006' // Stripe URL for 9-class pack
+        },
+        '4-class': {
+            dates: 'October 7, 14, 21, 28',
+            price: '$33.00 (4 classes, $8.25 per class)',
+            stripeUrl: 'https://buy.stripe.com/3cs3cfd8M3wv6qcaEI' // Stripe URL for 4-class pack
+        },
+        '5-class': {
+            dates: 'October 2, 9, 16, 23, 30',
+            price: '$41.25 (5 classes, $8.25 per class)',
+            stripeUrl: 'https://buy.stripe.com/6oEeUX3yc7ML29WfZ3' // Stripe URL for 5-class pack
+        }
+    };
+
+    // Event listener for dropdown change
+    document.getElementById('class-pack-select').addEventListener('change', function() {
+        const selectedValue = this.value;
+        const classDetailsDiv = document.getElementById('class-details');
+        const classDates = document.getElementById('class-dates');
+        const classPrice = document.getElementById('class-price');
+
+        // Ensure that a valid class pack is selected
+        if (selectedValue !== "" && classInfo[selectedValue]) {
+            // Show the class details
+            classDates.innerText = `Dates: ${classInfo[selectedValue].dates}`;
+            classPrice.innerText = `Price: ${classInfo[selectedValue].price}`;
+            classDetailsDiv.style.display = 'block';
         } else {
-            stripeButton.style.display = 'none';
-            signupButton.style.display = 'inline-block';
+            // Hide the details if no valid selection is made
+            classDetailsDiv.style.display = 'none';
         }
     });
-});
 
-// Function to validate form fields
-function validateForm() {
-    const nameField = document.getElementById('name-combined');
-    const emailField = document.getElementById('email-combined');
+    // Event listener for payment method selection
+    document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
+        input.addEventListener('change', function() {
+            const stripeButton = document.getElementById('stripe-button');
+            const signupButton = document.getElementById('signup-button');
 
-    if (nameField.value.trim() !== '' && emailField.value.trim() !== '') {
-        stripeButton.disabled = false; 
-    } else {
-        stripeButton.disabled = true;
+            if (this.value === 'credit-card-stripe') {
+                signupButton.style.display = 'none';
+                stripeButton.style.display = 'inline-block';
+                validateForm(); // Validate form when payment method changes
+            } else {
+                stripeButton.style.display = 'none';
+                signupButton.style.display = 'inline-block';
+            }
+        });
+    });
+
+    // Handle Stripe redirection
+    document.getElementById('stripe-button').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get the selected class pack from the dropdown
+        const selectedClassPack = document.getElementById('class-pack-select').value;
+
+        // Ensure a valid selection
+        if (selectedClassPack && classInfo[selectedClassPack]) {
+            window.location.href = classInfo[selectedClassPack].stripeUrl; // Redirect to the appropriate Stripe URL
+        } else {
+            alert('Please select a valid class pack before proceeding to payment.');
+        }
+    });
+
+    // Real-time validation for Stripe button
+    document.getElementById('name-combined').addEventListener('input', validateForm);
+    document.getElementById('email-combined').addEventListener('input', validateForm);
+
+    // Function to validate form fields
+    function validateForm() {
+        const nameField = document.getElementById('name-combined');
+        const emailField = document.getElementById('email-combined');
+        const stripeButton = document.getElementById('stripe-button');
+
+        if (nameField.value.trim() !== '' && emailField.value.trim() !== '') {
+            stripeButton.disabled = false; // Enable Stripe button if form is valid
+        } else {
+            stripeButton.disabled = true; // Disable Stripe button if form is invalid
+        }
     }
-}
-
-// Redirect based on class pack choice
-stripeButton.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent form submission
-
-    // Get the selected class pack from the dropdown
-    const selectedClassPack = document.getElementById('class-pack-select').value;
-    
-    // Ensure a valid selection
-    if (selectedClassPack === '9-class') {
-        window.location.href = "https://buy.stripe.com/00gdQTecQ4Az5m8006"; // 9-Class Pack Stripe URL
-    } else if (selectedClassPack === '4-class') {
-        window.location.href = "https://buy.stripe.com/3cs3cfd8M3wv6qcaEI"; // 4-Class Pack Stripe URL
-    } else if (selectedClassPack === '5-class') {
-        window.location.href = "https://buy.stripe.com/6oEeUX3yc7ML29WfZ3"; // 5-Class Pack Stripe URL
-    }
-});
-
-// Real-time validation
-document.getElementById('name-combined').addEventListener('input', validateForm);
-document.getElementById('email-combined').addEventListener('input', validateForm);
-
 </script>
-</div>
+ </div>
 
             <!-- Lady's Gentlemen Section -->
  <!-- Men's Monday Class Pack -->
