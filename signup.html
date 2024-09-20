@@ -164,7 +164,7 @@
 
             <!-- Lady's Gentlemen Section -->
  <!-- Men's Monday Class Pack -->
-<div class="class-pack-section class-pack-section-ladies blue-section">
+<<div class="class-pack-section class-pack-section-ladies blue-section">
     <h2>Lady's Gentlemen Monday 10:00 AM</h2>
     
     <p>Dates: October 7, 14, 21, 28 (4 classes)</p>
@@ -188,7 +188,7 @@
         </div>
 
         <input type="hidden" name="class" value="Lady's Gentlemen Monday 4-Class Pack">
-         <!-- Regular Sign Up button -->
+        <!-- Regular Sign Up button -->
         <button type="submit" id="signup-button-monday" class="cta-button">Sign Up</button>
 
         <!-- Stripe button (hidden by default) -->
@@ -211,7 +211,8 @@
             stripeButton.style.display = 'none';
         }
     }
-     // Add event listener for Stripe button
+
+    // Add event listener for Stripe button
     document.getElementById('stripe-button-monday').addEventListener('click', function(event) {
         event.preventDefault(); // Prevent form submission
         
@@ -219,6 +220,7 @@
         window.location.href = "https://buy.stripe.com/3cs3cfd8M3wv6qcaEI"; // Replace with your actual Stripe URL for this class
     });
 </script>
+
 
 
 
