@@ -83,7 +83,7 @@
     });
 </script>
 
-</script>
+
 
 
     <!-- Name and email fields -->
@@ -182,71 +182,48 @@ document.getElementById('email-combined').addEventListener('input', validateForm
     <p>Price: $33.00 ($8.25 per class)</p>
     
     <form id="signup-form-mens-monday" action="https://formspree.io/f/mvgpnvvl" method="POST">
-        <label for="name-gentlemen-monday">Your Name:</label>
-        <input type="text" id="name-gentlemen-monday" name="name" required>
+        <label for="name-gentlemen-monday-monday">Your Name:</label>
+        <input type="text" id="name-gentlemen-monday-monday" name="name" required>
 
-        <label for="email-gentlemen-monday">Your Email:</label>
-        <input type="email" id="email-gentlemen-monday" name="email" required>
+        <label for="email-gentlemen-monday-monday">Your Email:</label>
+        <input type="email" id="email-gentlemen-monday-monday" name="email" required>
 
         <label for="payment-method">Payment Method:</label><br>
         <div class="radio-group">
-            <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required onchange="toggleButtons()">
-            <label for="payment-method-cash">Cash</label>
+            <input type="radio" id="payment-method-cash-monday" name="payment-method" value="cash" required onchange="toggleButtonsMensMonday()">
+            <label for="payment-method-cash-monday">Cash</label>
         </div>
         <div class="radio-group">
-            <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required onchange="toggleButtons()">
-            <label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay</label>
+            <input type="radio" id="payment-method-stripe-monday" name="payment-method" value="credit-card-stripe" required onchange="toggleButtonsMensMonday()">
+            <label for="payment-method-stripe-monday">Credit Card | Apple Pay | Amazon Pay</label>
         </div>
 
         <input type="hidden" name="class" value="Lady's Gentlemen Monday 4-Class Pack">
          <!-- Regular Sign Up button -->
-        <button type="submit" id="signup-button" class="cta-button">Sign Up</button>
+        <button type="submit" id="signup-button-monday" class="cta-button">Sign Up</button>
 
         <!-- Stripe button (hidden by default) -->
-        <button id="stripe-button" class="cta-button" style="display:none;" disabled>Pay Here and and Sign Up</button>
+        <button id="stripe-button-monday" class="cta-button" style="display:none;" disabled>Pay Here and Sign Up</button>
     </form>
 </div>
 
 <script>
-    // Event listener for class pack and payment method selection
-    const classPackRadios = document.querySelectorAll('input[name="class-pack"]');
-    const stripeMessage = document.getElementById('stripe-message');
-    const stripeButton = document.getElementById('stripe-button');
-    const signupButton = document.getElementById('signup-button');
-    const classInput = document.querySelector('input[name="class"]');
-    
-    // Handle payment method selection
-document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
-    input.addEventListener('change', function() {
-        if (this.value === 'credit-card-stripe') {
+    // Function to toggle button visibility for Men's Monday section
+    function toggleButtonsMensMonday() {
+        const stripeOption = document.getElementById('payment-method-stripe-monday').checked;
+        const signUpButton = document.getElementById('signup-button-monday');
+        const stripeButton = document.getElementById('stripe-button-monday');
+
+        if (stripeOption) {
+            signUpButton.style.display = 'none';
             stripeButton.style.display = 'inline-block';
-            signupButton.style.display = 'none';
-            validateForm(); // Validate form when payment method changes
         } else {
+            signUpButton.style.display = 'inline-block';
             stripeButton.style.display = 'none';
-            signupButton.style.display = 'inline-block';
         }
-    });
-});
-    // Function to validate form fields
-function validateForm() {
-    const nameField = document.getElementById('name-combined');
-    const emailField = document.getElementById('email-combined');
-
-    if (nameField.value.trim() !== '' && emailField.value.trim() !== '') {
-        stripeButton.disabled = false; 
-    } else {
-        stripeButton.disabled = true;
     }
-}
-
-    function redirectToStripeMensMonday() {
-        window.location.href = "https://buy.stripe.com/3cs3cfd8M3wv6qcaEI"; // Replace with your actual Stripe URL
-    }
-
-    // Trigger toggleButtons on page load to ensure correct button visibility
-    window.onload = toggleButtons;
 </script>
+
 
 
              <!-- Trial Class Pack -->
