@@ -178,14 +178,13 @@ document.getElementById('email-combined').addEventListener('input', validateForm
             
                 
 
-             <!-- Men's Monday Class Pack -->
+ <!-- Men's Monday Class Pack -->
 <div class="class-pack-section class-pack-section-ladies blue-section">
-<h2>Lady's Gentlemen Monday 10:00 AM </h2>
+    <h2>Lady's Gentlemen Monday 10:00 AM</h2>
     
     <p>Dates: October 7, 14, 21, 28 (4 classes)</p>
     <p>Price: $33.00 ($8.25 per class)</p>
-	
-        
+    
     <form id="signup-form-mens-monday" action="https://formspree.io/f/mvgpnvvl" method="POST">
         <label for="name-gentlemen-monday">Your Name:</label>
         <input type="text" id="name-gentlemen-monday" name="name" required>
@@ -194,40 +193,39 @@ document.getElementById('email-combined').addEventListener('input', validateForm
         <input type="email" id="email-gentlemen-monday" name="email" required>
 
         <label for="payment-method">Payment Method:</label><br>
-        <form>
-    <div class="radio-group">
-        <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required>
-        <label for="payment-method-cash">Cash</label>
-    </div>
-    <div class="radio-group">
-        <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
-        <label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay</label>
-    </div>
+        <div class="radio-group">
+            <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required onchange="toggleButtons()">
+            <label for="payment-method-cash">Cash</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required onchange="toggleButtons()">
+            <label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay</label>
+        </div>
 
-    <input type="hidden" name="class" value="Lady's Ladies Monday 4-Class Pack">
-    <button type="submit" class="cta-button">Sign Up</button>
-</form>
+        <input type="hidden" name="class" value="Lady's Gentlemen Monday 4-Class Pack">
+        <button type="submit" id="sign-up-button-mens-monday" class="cta-button">Sign Up</button>
+    </form>
 
     <!-- Optional Stripe Payment Button if user selects Stripe -->
-    <button id="stripe-button-mens-monday" class="cta-button" style="display:none;" onclick="redirectToStripeMensMonday()">Pay Here</button>
+    <button id="stripe-button-mens-monday" class="cta-button" style="display:none;" onclick="redirectToStripeMensMonday()">Pay Here and Sign Up</button>
 </div>
 
 <script>
-    const formMensMonday = document.getElementById('signup-form-mens-monday');
-    const stripeButtonMensMonday = document.getElementById('stripe-button-mens-monday');
+    function toggleButtons() {
+        const stripeOption = document.getElementById('payment-method-stripe').checked;
+        const signUpButton = document.getElementById('sign-up-button-mens-monday');
+        const stripeButton = document.getElementById('stripe-button-mens-monday');
 
-    formMensMonday.addEventListener('submit', function(event) {
-        const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
-
-        if (paymentMethod === 'credit-card-stripe') {
-            // Prevent form submission to Formspree if Stripe is chosen
-            event.preventDefault();
-            
-            // Show Stripe button for payment
-            stripeButtonMensMonday.style.display = 'inline-block';
+        if (stripeOption) {
+            signUpButton.style.display = 'none';
+            stripeButton.style.display = 'inline-block';
+        } else {
+            signUpButton.style.display = 'inline-block';
+            stripeButton.style.display = 'none';
         }
-    });
+    }
 
+    
     function redirectToStripeMensMonday() {
         window.location.href = "https://buy.stripe.com/3cs3cfd8M3wv6qcaEI"; // Replace with your actual Stripe URL
     }
