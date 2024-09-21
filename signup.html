@@ -81,7 +81,7 @@
             <div id="disclaimer" class="disclaimer">
                 <h3>Flexible Class Pack Policy:</h3>
                 <p>
-                    All class packs are designed with flexibility in mind to fit your schedule. If you've purchased a 4-class Monday pack or a 5-class Wednesday pack but prefer to mix and match classes on different days (Monday and Wednesday), please reach out to me for approval. I will do my best to accommodate your request based on class availability. Adjustments are subject to space in the requested classes, and approval is required before attending any classes outside of your chosen pack.
+                    All class packs are designed with flexibility in mind to fit your schedule. If you purchase a 4-class Monday pack or a 5-class Wednesday pack but prefer to mix and match classes on different days (Monday and Wednesday), please reach out to me for approval. I will do my best to accommodate your request based on class availability. Adjustments are subject to space in the requested classes, and approval is required before attending any classes outside of your chosen pack.
                 </p>
                 <h3>Class Pack Validity:</h3>
                 <p>
@@ -89,11 +89,11 @@
                 </p>
                 <h3>Class Cancellation Policy:</h3>
                 <p>
-                    Classes may be subject to cancellation due to unforeseen circumstances. In the event of a class cancellation, you will be notified via email at least 24 hours in advance.
+                    Classes may be subject to cancellation due to unforeseen circumstances. In the event of a class cancellation, you will be notified via email at least 24 hours in advance and class will be rescheduled.
                 </p>
                 <h3>Health and Safety Disclaimer:</h3>
                 <p>
-                By purchasing and participating in these classes, you acknowledge that you are physically fit to engage in the fitness activity. Lai Fitness will not be held responsible for any injuries or accidents that may occur during class.
+                By purchasing and participating in these classes, you acknowledge that you are physically fit to engage in the fitness activity. 
                 </p>
                 <h3>Email Communication Consent:</h3>
                 <p>
@@ -251,6 +251,32 @@
             <label for="payment-method-stripe-monday">Credit Card | Apple Pay | Amazon Pay</label>
         </div>
 
+        <!-- Disclaimers (initially hidden) -->
+            <div id="disclaimer" class="disclaimer">
+               
+                <h3>Class Pack Validity:</h3>
+                <p>
+                    Please note that all classes purchased for this month must be used within the same month. Classes do not roll over into the following month, and any unused classes will expire at the end of the current month. Make sure to attend your classes before the month ends to make the most of your pack!
+                </p>
+                <h3>Class Cancellation Policy:</h3>
+                <p>
+                    Classes may be subject to cancellation due to unforeseen circumstances. In the event of a class cancellation, you will be notified via email at least 24 hours in advance and class will be rescheduled.
+                </p>
+                <h3>Health and Safety Disclaimer:</h3>
+                <p>
+                By purchasing and participating in these classes, you acknowledge that you are physically fit to engage in the fitness activity. 
+                </p>
+                <h3>Email Communication Consent:</h3>
+                <p>
+                By signing up for classes, you agree to receive email notifications regarding class schedules, cancellations, and other important updates related to your fitness sessions.
+                </p>
+                 <h3>Waiver Requirement:</h3>
+                <p>
+                 Participation in group fitness classes requires a signed waiver. By signing up, you confirm that you have signed or agree to sign a waiver before your first class.
+                </p>
+            </div>
+        
+
         <input type="hidden" name="class" value="Lady's Gentlemen Monday 4-Class Pack">
 
           <!-- Add a hidden input for redirect URL -->
@@ -266,7 +292,18 @@
        <button id="stripe-button-monday" class="cta-button" style="display:none;">Pay Here and Sign Up</button>
     </form>
 </div> 
-        
+
+
+     <script>
+        // Function to toggle the disclaimer visibility
+        document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
+            input.addEventListener('change', function() {
+                const disclaimer = document.getElementById('disclaimer');
+                disclaimer.style.display = 'block'; // Show the disclaimers when any payment option is selected
+            });
+        });
+    </script>
+
 <script>
     // Function to toggle button visibility for Men's Monday section
     function toggleButtonsMensMonday() {
