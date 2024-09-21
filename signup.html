@@ -252,7 +252,7 @@
         </div>
 
         <!-- Disclaimers (initially hidden) -->
-            <div id="disclaimer" class="disclaimer">
+            <div id="disclaimer-mens" class="disclaimer">
                
                 <h3>Class Pack Validity:</h3>
                 <p>
@@ -296,9 +296,9 @@
 
      <script>
         // Function to toggle the disclaimer visibility
-        document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
+        document.querySelectorAll('input[name="payment-method-mens"]').forEach((input) => {
             input.addEventListener('change', function() {
-                const disclaimer = document.getElementById('disclaimer');
+                const disclaimer = document.getElementById('disclaimer-mens');
                 disclaimer.style.display = 'block'; // Show the disclaimers when any payment option is selected
             });
         });
