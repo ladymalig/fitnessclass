@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up for Group Classes - Lai Fitness</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Initially hide disclaimers */
+        .disclaimer {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -66,7 +76,19 @@
             <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
             <label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay</label>
         </div>
-
+        
+        <!-- Disclaimers (initially hidden) -->
+            <div id="disclaimer" class="disclaimer">
+                <h3>Flexible Class Pack Policy:</h3>
+                <p>
+                    All class packs are designed with flexibility in mind to fit your schedule. If you've purchased a 4-class Monday pack or a 5-class Wednesday pack but prefer to mix and match classes on different days (Monday and Wednesday), please reach out to me for approval. I will do my best to accommodate your request based on class availability. Adjustments are subject to space in the requested classes, and approval is required before attending any classes outside of your chosen pack.
+                </p>
+                <h3>Class Pack Validity:</h3>
+                <p>
+                    Please note that all classes purchased for this month must be used within the same month. Classes do not roll over into the following month, and any unused classes will expire at the end of the current month. Make sure to attend your classes before the month ends to make the most of your pack!
+                </p>
+            </div>
+        
         <!-- Hidden input to capture selected class pack -->
         <input type="hidden" id="selected-class-pack" name="selected-class-pack">
 
@@ -81,6 +103,15 @@
     </form>
 </div>
 
+      <script>
+        // Function to toggle the disclaimer visibility
+        document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
+            input.addEventListener('change', function() {
+                const disclaimer = document.getElementById('disclaimer');
+                disclaimer.style.display = 'block'; // Show the disclaimers when any payment option is selected
+            });
+        });
+    </script>
 
 <script>
     // Object to store class details
