@@ -272,8 +272,8 @@
      <h2>Cardio Blast 9:30 AM</h2>
 
      <!-- Price and Class Dates -->
-     <p>Dates: October 24, 31 (2 classes)</p>
-     <p>Price: $16.50 ($8.25 per class)</p>
+     <p>Dates: October 17, 24, 31 (3 classes)</p>
+     <p>Price: $24.75 ($8.25 per class)</p>
 
      <!-- Name and email fields -->
      <form id="signup-form-cardio" action="https://formspree.io/f/mvgpnvvl" method="POST">
@@ -287,7 +287,7 @@
          <label for="payment-method">Payment Method:</label><br>
          <div class="radio-group">
              <input type="radio" id="payment-method-cash-cardio" name="payment-method" value="cash" required>
-             <label for="payment-method-cash-cardio">Cash</label>
+             <label for="payment-method-cash-cardio">Cash | Check</label>
          </div>
          <div class="radio-group">
              <input type="radio" id="payment-method-stripe-cardio" name="payment-method" value="credit-card-stripe" required>
@@ -363,7 +363,7 @@
      // Handle Stripe redirection
      document.getElementById('stripe-button-cardio').addEventListener('click', function(event) {
          event.preventDefault();
-         window.location.href = "https://buy.stripe.com/00g9AD7Os4AzdSE6ov";
+         window.location.href = "https://buy.stripe.com/28o4gj2u88QPaGs6ow";
      });
  </script>
 
