@@ -32,7 +32,7 @@ body {
 
 .homepage-image {
     flex: 1;
-    max-width: 500px; /* Set a max width for the image */
+    max-width: 800px; /* Set a max width for the image */
     height: auto;
     border-radius: 2px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -139,9 +139,7 @@ nav ul li a:hover {
     margin-bottom: 1.5rem;
 }
 
-.pink-section {
-    border: 10px solid #d4bac4;
-}
+
 
 .pink-section .cta-button {
     background-color: #d81b60;
@@ -151,9 +149,19 @@ nav ul li a:hover {
     background-color: #b0003a;
 }
 
-.orange-section {
-    border: 10px solid #ebdbc7;
+/*.blue-section {
+    border: 5px solid #9e857b;
 }
+*/
+.blue-section .cta-button {
+    background-color: #40b2de;
+}
+
+.blue-section .cta-button:hover {
+    background-color: #416e69;
+}
+
+
 
 .orange-section .cta-button {
     background-color: #f06b43;
@@ -198,6 +206,7 @@ nav ul li a:hover {
 form {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
     max-width: 100%;
     text-align: left;
@@ -209,21 +218,23 @@ form label {
 
 form input, form select {
     width: 100%;
-    padding: 10px;
-    font-size: 1em;
-    margin-bottom: 10px;
+    padding: 12px;
+    font-size: 1.1rem;
+ 
+}
+
+form .cta-button {
+    align-self: center;
+    width: auto;
 }
 
 .cta-button {
-    color: #fff;
-    padding: 1rem 2rem;
-    border-radius: 6px;
-    text-decoration: none;
+    display: block;
+    width: auto;
+    margin: 20px auto;
+    padding: 12px 20px;
     font-size: 1.2rem;
-    transition: background-color 0.3s ease;
-    width: 100%;
 }
-
 
 .fitness-image, .home-image {
     width: 100%;
@@ -287,25 +298,113 @@ form input, form select {
     }
 }
 
-@media only screen and (min-width: 768px) {
-    form {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
+@media only screen and (max-width: 768px) {
+    .radio-group {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    form label {
-        flex: 1 1 100%;
+    .class-pack-section {
+        width: 100%;
+        text-align: center;
     }
 
-    form input, form select {
-        flex: 1 1 45%;
+    form input, form select, form button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.2rem;
     }
 
     .cta-button {
-        width: auto;
+        width: 100%;
     }
+}
+.qr-codes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.qr-codes img {
+    max-width: 150px;
+    height: auto;
+    margin-right: 10px;
 }
 
 
+/* Container for the buttons */
+.class-selection-buttons {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 20px; /* Add space between buttons */
+    margin-bottom: 2rem; /* Space below the buttons */
+    padding: 20px 0; /* Padding for the container */
+}
+
+
+.class-selection-buttons .cta-button {
+    background-color: #0056b3; /* Blue button */
+    color: white;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    margin: 0 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.class-selection-buttons .cta-button:hover {
+    background-color: #2d6cae;
+}
+/* General button styling */
+.cta-button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* Hover effect */
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+/* Class-specific colors */
+.pink-button {
+    background-color: #d81b60;
+}
+
+.pink-button:hover {
+    background-color: #b0003a;
+}
+
+.blue-button {
+    background-color: #0056b3;
+}
+
+.blue-button:hover {
+    background-color: #003f7d;
+}
+
+.orange-button {
+    background-color: #f06b43;
+}
+
+.orange-button:hover {
+    background-color: #d55a32;
+}
+
+@media only screen and (max-width: 768px) {
+    .class-selection-buttons {
+        flex-direction: column; /* Stack the buttons vertically */
+    }
+
+    .cta-button {
+        width: 100%; /* Make buttons full-width on mobile */
+    }
+}
 
