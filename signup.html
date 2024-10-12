@@ -25,29 +25,52 @@
                 <li><a href="me.html">Trainer</a></li>
             </ul>
         </nav>
+
+ 
     </header>
 
+<div>
+ <section id="classes" class="classes-section">
+           
+                <h2>Select a Class</h2>
+                
+           
+
+    <!-- Buttons to select the class -->
+   <div class="class-selection-buttons">
+ 
+
+
+    <button id="circuit-training-button" class="cta-button pink-button">Circuit Training</button>
+    <button id="cardio-blast-button" class="cta-button blue-button">Cardio Blast</button>
+    <button id="free-class-button" class="cta-button orange-button">Chair Class</button>
+</div>
+
+ </div>
+    
     <section class="signup-section">
         <div class="container">
             <!-- Lady's Ladies Section -->
 
- <div class="class-pack-section class-pack-section-ladies pink-section">
-            
+            <div id="circuit-training-section" class="class-pack-section pink-section" style="display: none;">
+
 <!-- Combined Class Pack -->
 <div class="class-pack">
-    <h2>Circuit Training Monday & Wednesday 9:00 AM</h2>
+    <h1>November registration begins October 22, 2024</h1>
+    <!--h2>Circuit Training Monday & Wednesday 9:00 AM</h2>
+
 
      <!--p style="margin-top: 20px;">
     Click <a href="https://docs.google.com/document/d/1FMuU11jroFSMT0xvr7MPRZ_ZLSMBbV8-NUsWLvuLmBQ/edit?usp=sharing" target="_blank">here</a> to view sign-up list.
 </p>
 
     <!-- Dropdown Menu for Class Pack Selection -->
-    <select id="class-pack-select" name="class-pack" required>
+    <!--select id="class-pack-select" name="class-pack" required>
         <option value="" disabled selected>Select a class pack</option>
         <option value="8-class">MONDAY AND WEDNESDAY</option>
         <option value="4-classM">MONDAY ONLY</option>
         <option value="4-classW">WEDNESDAY ONLY</option>
-    </select>
+    </select-->
 
 
         <!-- Placeholder for showing selected class details -->
@@ -61,61 +84,60 @@
     
     <!-- Name and email fields -->
     <form id="signup-form-combined" action="https://formspree.io/f/mvgpnvvl" method="POST">
-        <!--label for="name-combined">Name:</label-->
+        <!--label for="name-combined">Name:</label>
         <input type="text" id="name-combined" name="name" required>
 
-        <!--label for="email-combined">Email:</label-->
-        <input type="email" id="email-combined" name="email" required>
-
-        <!-- Payment Method radio buttons (including Venmo/Zelle) -->
-	<!--label for="payment-method">Payment Method:</label--><br>
-	
-	<!--div class="radio-group">
-    <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required>
-    <label for="payment-method-cash">Cash</label>
-	</div>
-	<div class="radio-group">
-    	<input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
-    	<label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay</label>
-	</div>
-	<div class="radio-group">
-    <input type="radio" id="payment-method-venmo-zelle" name="payment-method" value="venmo-zelle" required>
-    <label for="payment-method-venmo-zelle">Venmo | Zelle</label>
-	</div-->
-     
-	 <h3>***SIGN UP BEGINS OCT 22, 2024***</h3>
-
-        
-     <!-- Disclaimers (initially hidden) -->
-    <div id="disclaimer" class="disclaimer">
-	<h2>***READ FIRST***</h2>
-    <h3>Flexible Class Pack Policy:</h3>
-    <p>
-        If you purchase a 4-class Monday or Wednesday pack but prefer to mix and match classes on different days (Monday and Wednesday), please reach out to me for approval. I will do my best to accommodate your request based on class availability.
-    </p>
-    <h3>Class Pack Validity:</h3>
-    <p>
-        All classes must be used within the month of purchase. Unused classes expire at the end of the month.
-    </p>
-   
-    <h3>Email Communication Consent:</h3>
-    <p>
-        You agree to receive emails regarding class schedules, cancellations, and updates.
-    </p>
-
-    <h3>Waiver Requirement:</h3>
-    <p>
-        A signed waiver is required before attending your first class. Click <a href="https://drive.google.com/file/d/1T6dfO253JH5dzsrI6NMHKCquP6hWwon3/view?usp=sharing">here</a> to view waiver.
-    </p>
-	<!-- QR Codes for Venmo and Zelle (initially hidden) -->
-<div id="venmo-zelle-qrcodes" class="disclaimer" style="display: none;">
-    <h3>Venmo/Zelle Payment QR Codes:</h3>
-    <p>Scan the appropriate QR code to make your payment.</p>
-    <div class="qr-codes">
-        <img src="venmo.jpeg" alt="Venmo QR Code" style="width: 150px;">
-        <img src="zelle.jpeg" alt="Zelle QR Code" style="width: 150px;">
-    </div>
-</div>
+        <label for="email-combined">Email:</label>
+        <input type="email" id="email-combined" name="email" required-->
+            
+            <!-- Payment Method radio buttons (including Venmo/Zelle) -->
+            <!--label for="payment-method">Payment Method:</label><br>
+            
+            <div class="radio-group">
+                <input type="radio" id="payment-method-cash" name="payment-method" value="cash" required>
+                    <label for="payment-method-cash">Cash</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" id="payment-method-stripe" name="payment-method" value="credit-card-stripe" required>
+                    <label for="payment-method-stripe">Credit Card | Apple Pay | Amazon Pay</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" id="payment-method-venmo-zelle" name="payment-method" value="venmo-zelle" required>
+                    <label for="payment-method-venmo-zelle">Venmo | Zelle</label>
+            </div>
+            
+            
+            <!-- Disclaimers (initially hidden) -->
+            <div id="disclaimer" class="disclaimer">
+                <h2>***READ FIRST***</h2>
+                <h3>Flexible Class Pack Policy:</h3>
+                <p>
+                If you purchase a 4-class Monday or Wednesday pack but prefer to mix and match classes on different days (Monday and Wednesday), please reach out to me for approval. I will do my best to accommodate your request based on class availability.
+                </p>
+                <h3>Class Pack Validity:</h3>
+                <p>
+                All classes must be used within the month of purchase. Unused classes expire at the end of the month.
+                </p>
+                
+                <h3>Email Communication Consent:</h3>
+                <p>
+                You agree to receive emails regarding class schedules, cancellations, and updates.
+                </p>
+                
+                <h3>Waiver Requirement:</h3>
+                <p>
+                A signed waiver is required before attending your first class. Click <a href="https://drive.google.com/file/d/1T6dfO253JH5dzsrI6NMHKCquP6hWwon3/view?usp=sharing">here</a> to view waiver.
+                </p>
+                
+            </div>
+            <!-- QR Codes for Venmo and Zelle (initially hidden) -->
+        <div id="venmo-zelle-qrcodes" class="disclaimer" style="display: none;">
+            <h3>Venmo/Zelle Payment QR Codes:</h3>
+            <p>Scan the appropriate QR code to make your payment.</p>
+            <div class="qr-codes">
+                <img src="venmo.jpeg" alt="Venmo QR Code" style="width: 150px;">
+                <img src="zelle.jpeg" alt="Zelle QR Code" style="width: 150px;">
+            </div>
 </div>
 
         
@@ -131,7 +153,11 @@
         <!-- Stripe button (hidden by default) -->
         <button id="stripe-button" class="cta-button" style="display:none;" disabled>Pay Here and Sign Up</button>
     </form>
+    
 </div>
+
+
+
 
 <script>
     // Function to toggle the disclaimer and QR codes visibility
@@ -239,144 +265,208 @@
  </div>
 
 
-
             
-            <!-- Lady's Gentlemen Section -->
- <!-- Men's Monday Class Pack -->
-<!--div class="class-pack-section class-pack-section-ladies blue-section">
-    <h2>Lady's Gentlemen Monday 10:00 AM</h2>
-    
-    <p>Dates: October 7, 14, 21, 28 (4 classes)</p>
-    <p>Price: $33.00 ($8.25 per class)</p>
-    
-    <form id="signup-form-mens-monday" action="https://formspree.io/f/mvgpnvvl" method="POST">
-        <label for="name-gentlemen-monday-monday">Your Name:</label>
-        <input type="text" id="name-gentlemen-monday-monday" name="name" required>
+            
 
-        <label for="email-gentlemen-monday-monday">Your Email:</label>
-        <input type="email" id="email-gentlemen-monday-monday" name="email" required>
+            <div id="cardio-blast-section" class="class-pack-section blue-section" style="display: none;">
+     <h2>Cardio Blast 9:30 AM</h2>
 
-        <label for="payment-method">Payment Method:</label><br>
-        <div class="radio-group">
-            <input type="radio" id="payment-method-cash-monday" name="payment-method-mens" value="cash" required onchange="toggleButtonsMensMonday()">
-            <label for="payment-method-cash-monday">Cash</label>
-        </div>
-        <div class="radio-group">
-            <input type="radio" id="payment-method-stripe-monday" name="payment-method-mens" value="credit-card-stripe" required onchange="toggleButtonsMensMonday()">
-            <label for="payment-method-stripe-monday">Credit Card | Apple Pay | Amazon Pay</label>
-        </div>
+     <!-- Price and Class Dates -->
+     <p>Dates: October 24, 31 (2 classes)</p>
+     <p>Price: $16.50 ($8.25 per class)</p>
 
-        <!-- Disclaimers (initially hidden) -->
-    <!--div id="disclaimer-mens" class="disclaimer">
-               
-    <h3>Class Pack Validity:</h3>
-    <p>
-        All classes must be used within the month of purchase. Unused classes expire at the end of the month.
-    </p>
+     <!-- Name and email fields -->
+     <form id="signup-form-cardio" action="https://formspree.io/f/mvgpnvvl" method="POST">
+         <label for="name-cardio">Name:</label>
+         <input type="text" id="name-cardio" name="name" required>
 
-    <h3>Email Communication Consent:</h3>
-    <p>
-        You agree to receive emails regarding class schedules, cancellations, and updates.
-    </p>
+         <label for="email-cardio">Email:</label>
+         <input type="email" id="email-cardio" name="email" required>
 
-    <h3>Waiver Requirement:</h3>
-    <p>
-        A signed waiver is required before attending your first class. Click <a href="https://drive.google.com/file/d/1T6dfO253JH5dzsrI6NMHKCquP6hWwon3/view?usp=sharing">here</a> to view waiver.
-    </p>
-      </div>
-        
+         <!-- Payment Method radio buttons -->
+         <label for="payment-method">Payment Method:</label><br>
+         <div class="radio-group">
+             <input type="radio" id="payment-method-cash-cardio" name="payment-method" value="cash" required>
+             <label for="payment-method-cash-cardio">Cash</label>
+         </div>
+         <div class="radio-group">
+             <input type="radio" id="payment-method-stripe-cardio" name="payment-method" value="credit-card-stripe" required>
+             <label for="payment-method-stripe-cardio">Credit Card | Apple Pay | Amazon Pay</label>
+         </div>
+         <div class="radio-group">
+             <input type="radio" id="payment-method-venmo-zelle-cardio" name="payment-method" value="venmo-zelle" required>
+             <label for="payment-method-venmo-zelle-cardio">Venmo | Zelle</label>
+         </div>
 
-        <input type="hidden" name="class" value="Lady's Gentlemen Monday 4-Class Pack">
+         <!-- Disclaimers -->
+         <div id="disclaimer-cardio" class="disclaimer" style="display: none;">
+             <h3>Class Pack Validity:</h3>
+             <p>All classes must be used within the month of purchase. Unused classes expire at the end of the month.</p>
 
-          <!-- Add a hidden input for redirect URL -->
-        <!--input type="hidden" name="_redirect" value="https://workoutclass.netlify.app/thank.html">
+             <h3>Email Communication Consent:</h3>
+             <p>You agree to receive emails regarding class schedules, cancellations, and updates.</p>
 
-        <input type="hidden" name="class" value="">
-        
-        
-        <!-- Regular Sign Up button -->
-      <!--button type="submit" id="signup-button-monday" class="cta-button">Sign Up</button>
+             <h3>Waiver Requirement:</h3>
+             <p>A signed waiver is required before attending your first class. Click <a href="https://drive.google.com/file/d/1T6dfO253JH5dzsrI6NMHKCquP6hWwon3/view?usp=sharing">here</a> to view waiver.</p>
+         </div>
 
-        <!-- Stripe button (hidden by default) -->
-       <!--button id="stripe-button-monday" class="cta-button" style="display:none;">Pay Here and Sign Up</button>
-    </form>
-</div> 
+         <!-- QR Codes for Venmo/Zelle -->
+         <div id="venmo-zelle-qrcodes-cardio" class="disclaimer" style="display: none;">
+             <h3>Venmo/Zelle Payment QR Codes:</h3>
+             <div class="qr-codes">
+                 <img src="venmo.jpeg" alt="Venmo QR Code" style="width: 150px;">
+                 <img src="zelle.jpeg" alt="Zelle QR Code" style="width: 150px;">
+             </div>
+         </div>
 
+         <!-- Hidden input for redirect URL -->
+         <input type="hidden" name="_redirect" value="https://workoutclass.netlify.app/thank.html">
 
-     <script>
-        // Function to toggle the disclaimer visibility
-        document.querySelectorAll('input[name="payment-method-mens"]').forEach((input) => {
-            input.addEventListener('change', function() {
-                const disclaimer = document.getElementById('disclaimer-mens');
-                disclaimer.style.display = 'block'; // Show the disclaimers when any payment option is selected
-            });
-        });
-    </script>
+         <!-- Regular Sign Up button -->
+         <button type="submit" id="signup-button-cardio" class="cta-button">Sign Up</button>
 
-<script>
-    // Function to toggle button visibility for Men's Monday section
-    function toggleButtonsMensMonday() {
-        const stripeOption = document.getElementById('payment-method-stripe-monday').checked;
-        const signUpButton = document.getElementById('signup-button-monday');
-        const stripeButton = document.getElementById('stripe-button-monday');
-
-        if (stripeOption) {
-            signUpButton.style.display = 'none';
-            stripeButton.style.display = 'inline-block';
-            stripeButton.disabled = false; // Enable the Stripe button
-        } else {
-            signUpButton.style.display = 'inline-block';
-            stripeButton.style.display = 'none';
-            stripeButton.disabled = true; // Keep Stripe button disabled
-        }
-    }
-
-    // Add event listener for Stripe button
-    document.getElementById('stripe-button-monday').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent form submission
-        
-        // Redirect to Stripe payment page
-        window.location.href = "https://buy.stripe.com/3cs3cfd8M3wv6qcaEI"; // Replace with your actual Stripe URL for this class
-    });
-</script> 
-     </div>
-
-
-
-             <!-- Trial Class Pack -->
-             <div class="class-pack-section class-pack-section-ladies orange-section">
-
-
-                <div class="class-pack">
-
-                    <h2> FREE Chair Class </h2>
-                    <p>November 2024. 9:30 AM  </p>
-                 
-			<!--p>CLASS IS FULL </p-->
-			
-                    <form action="https://formspree.io/f/mvgpnvvl" method="POST">
-                        <!--label for="name-free-class">Your Name:</label-->
-                        <input type="text" id="name-gentlemen-monday" name="name" required>
-
-                        <!--label for="email-free">Your Email:</label-->
-                        <input type="email" id="email-free" name="email" required>
-
-                        <input type="hidden" name="class" value="name-free-class">
-                        <!--button type="submit" class="cta-button">Sign Up</button-->
-
- <h3>***SIGN UP BEGINS OCT 22, 2024***</h3>
-
-                          <!-- Add a hidden input for redirect URL -->
-                <input type="hidden" name="_redirect" value="https://workoutclass.netlify.app/thank.html">
-
-                <input type="hidden" name="class" value="">
-                    </form>
-              
+         <!-- Stripe button (hidden by default) -->
+         <button id="stripe-button-cardio" class="cta-button" style="display:none;">Pay Here and Sign Up</button>
+     </form>
             </div>
+            
+         
+       
+ <script>
+     // Function to toggle the disclaimer and QR codes visibility
+     document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
+         input.addEventListener('change', function() {
+             const disclaimer = document.getElementById('disclaimer-cardio');
+             const stripeButton = document.getElementById('stripe-button-cardio');
+             const signupButton = document.getElementById('signup-button-cardio');
+             const qrCodesDiv = document.getElementById('venmo-zelle-qrcodes-cardio');
+
+             disclaimer.style.display = 'block';
+
+             if (this.value === 'credit-card-stripe') {
+                 signupButton.style.display = 'none';
+                 stripeButton.style.display = 'inline-block';
+                 qrCodesDiv.style.display = 'none';
+                 validateForm();
+             } else if (this.value === 'venmo-zelle') {
+                 signupButton.style.display = 'inline-block';
+                 stripeButton.style.display = 'none';
+                 qrCodesDiv.style.display = 'block';
+             } else {
+                 stripeButton.style.display = 'none';
+                 signupButton.style.display = 'inline-block';
+                 qrCodesDiv.style.display = 'none';
+             }
+         });
+     });
+
+     // Handle Stripe redirection
+     document.getElementById('stripe-button-cardio').addEventListener('click', function(event) {
+         event.preventDefault();
+         window.location.href = "https://buy.stripe.com/00g9AD7Os4AzdSE6ov";
+     });
+ </script>
+
+
+             <!-- Free Class Pack -->
+             <div id="free-class-section" class="class-pack-section orange-section" style="display: none;">
+                 
+                 
+                 <div class="class-pack">
+                     
+                     <h2> Registration begins October 22, 2024 </h2>
+                     <!--h2> FREE Chair Class </h2-->
+                     <p>Date: November 7, 2024. 9:30 AM  </p>
+                     
+                     <!--p>CLASS IS FULL </p>
+                     
+                     <form action="https://formspree.io/f/mvgpnvvl" method="POST">
+                         <!--label for="name-free-class">Your Name:</label>
+                         <input type="text" id="name-gentlemen-monday" name="name" required>
+                             
+                             <label for="email-free">Your Email:</label>
+                             <input type="email" id="email-free" name="email" required>
+                                 
+
+			
+
+                                 <input type="hidden" name="class" value="name-free-class">
+                                     <button type="submit" class="cta-button">Sign Up</button>
+                                     
+                                     
+                                     <!-- Add a hidden input for redirect URL -->
+                                     <input type="hidden" name="_redirect" value="https://workoutclass.netlify.app/thank.html">
+                                         
+                                         <input type="hidden" name="class" value="">
+                                         </form>
+        
+                     
+                 </div>
+                 
+             </div>
+            
         </div>
+        
+        
+        <script>
+            // Get references to buttons and sections
+            const circuitButton = document.getElementById('circuit-training-button');
+            const cardioButton = document.getElementById('cardio-blast-button');
+            const freeButton = document.getElementById('free-class-button'); // Free class button
+            const circuitSection = document.getElementById('circuit-training-section');
+            const cardioSection = document.getElementById('cardio-blast-section');
+            const freeSection = document.getElementById('free-class-section'); // Free class section
+
+            // Event listener for Circuit Training button
+            circuitButton.addEventListener('click', function() {
+                circuitSection.style.display = 'block';
+                cardioSection.style.display = 'none';
+                freeSection.style.display = 'none'; // Hide free class section
+            });
+
+            // Event listener for Cardio Blast button
+            cardioButton.addEventListener('click', function() {
+                cardioSection.style.display = 'block';
+                circuitSection.style.display = 'none';
+                freeSection.style.display = 'none'; // Hide free class section
+            });
+
+            // Event listener for Free Chair Class button
+            freeButton.addEventListener('click', function() {
+                freeSection.style.display = 'block'; // Show free class section
+                cardioSection.style.display = 'none'; // Hide other sections
+                circuitSection.style.display = 'none'; // Hide other sections
+            });
+        </script>
 
     </section>
+    
+    <script>
+        // Get references to buttons and sections
+        const circuitButton = document.getElementById('circuit-training-button');
+        const cardioButton = document.getElementById('cardio-blast-button');
+        const freeButton = document.getElementById('free-class-button');
+        const circuitSection = document.getElementById('circuit-training-section');
+        const cardioSection = document.getElementById('cardio-blast-section');
+        const freeSection = document.getElementById('free-class-section');
+        
+        
+        // Event listener for Circuit Training button
+        circuitButton.addEventListener('click', function() {
+            // Show Circuit Training section and hide Cardio Blast section
+            circuitSection.style.display = 'block';
+            cardioSection.style.display = 'none';
+        });
+        
+        // Event listener for Cardio Blast button
+        cardioButton.addEventListener('click', function() {
+            // Show Cardio Blast section and hide Circuit Training section
+            cardioSection.style.display = 'block';
+            circuitSection.style.display = 'none';
+        });
+    </script>
 </body>
+
 
 </html>
 
