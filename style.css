@@ -298,23 +298,31 @@ form .cta-button {
     }
 }
 
-    /* Ensure radio buttons and labels are aligned left */
+/* General styles for radio buttons and labels */
 .radio-group {
     display: flex;
-    align-items: center; /* Align radio button and label vertically */
-    margin-bottom: 10px; /* Add space between radio button groups */
+    align-items: center; /* Ensure the radio button and label are vertically aligned */
+    margin-bottom: 10px; /* Add space between groups */
 }
 
 .radio-group label {
-    margin-left: 10px; /* Add some space between the radio button and the label */
+    margin-left: 10px; /* Add space between the radio button and label */
     font-weight: bold;
+    white-space: nowrap; /* Prevent labels from wrapping into multiple lines */
 }
 
+.radio-group label p {
+    margin: 0;
+}
+
+/* Mobile styles (optional) */
 @media only screen and (max-width: 768px) {
     .radio-group {
         flex-direction: column;
         align-items: flex-start;
     }
+}
+
 
 
     .class-pack-section {
