@@ -301,22 +301,18 @@ form .cta-button {
 /* General styles for radio buttons and labels */
 .radio-group {
     display: flex;
-    align-items: center; /* Ensure the radio button and label are vertically aligned */
-    margin-bottom: 10px; /* Add space between groups */
+    align-items: flex-start; /* Aligns radio button and label at the top */
+    margin-bottom: 10px; /* Space between radio button groups */
 }
 
 .radio-group label {
     margin-left: 10px;
     font-weight: bold;
-    white-space: normal; /* Let the browser wrap the text naturally */
-    display: inline-block; /* Ensure consistent inline behavior */
+    white-space: normal; /* Allow text to wrap naturally */
+    display: inline-block; /* Ensure the label behaves consistently */
     max-width: 100%; /* Prevent overflow issues */
-    word-wrap: break-word; /* Allow wrapping if necessary */
-}
-
-/* Optional reset for paragraphs inside labels, if needed */
-.radio-group label p {
-    margin: 0;
+    line-height: 1.4; /* Adjust the line height for better alignment */
+    vertical-align: top; /* Align the label with the top of the radio button */
 }
 
 /* Mobile styles (optional) */
@@ -326,6 +322,7 @@ form .cta-button {
         align-items: flex-start;
     }
 }
+
 
 
 
