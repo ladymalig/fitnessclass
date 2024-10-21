@@ -6,20 +6,27 @@
 }
 
 body {
-    font-family: 'Georgia', sans-serif;
-    background-color: #f0f4f8; /* Light blue background */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
     color: #333;
     line-height: 1.6;
 }
+
 /* Home Page Layout */
 .homepage-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 3rem;
+    padding: 2rem 4rem;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .homepage-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .homepage-text {
@@ -27,35 +34,27 @@ body {
     font-size: 1.5rem;
     line-height: 1.6;
     color: #333;
-    padding-right: 4rem; /* Adds space between text and image */
+    padding-right: 4rem;
 }
 
-.homepage-image {
-    flex: 1;
-    max-width: 800px; /* Set a max width for the image */
+.homepage-image img {
+    width: 100%;
+    max-width: 400px; /* Reduces the image size */
     height: auto;
     border-radius: 2px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Mobile Optimization for Homepage */
 @media only screen and (max-width: 768px) {
-    .homepage-container {
-        flex-direction: column; /* Stack text and image vertically */
-        text-align: center;
-    }
-
     .homepage-text {
-        padding-right: 0; /* Remove padding for mobile */
-        margin-bottom: 2rem; /* Add space between text and image */
+        padding-right: 0;
+        margin-bottom: 2rem;
     }
 
-    .homepage-image {
+    .homepage-image img {
         max-width: 100%;
     }
 }
-
-
 
 /* Header Styles */
 header {
@@ -72,7 +71,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: #4b2e2e; /* Dark brown text for navigation */
+    color: #4b2e2e;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
@@ -89,36 +88,65 @@ nav ul li a:hover {
     background-color: white;
     text-align: center;
     font-size: 1.3rem;
-    border-top: 2px solid #e0e6ed; /* Subtle border */
+    border-top: 2px solid #e0e6ed;
 }
 
 .classes-section h2 {
     margin-bottom: 2rem;
     font-size: 2.5rem;
-    color: #0056b3; /* Blue */
+    color: #034185;
 }
 
 .classes-section p {
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
-    color: #4b2e2e; /* Dark brown text */
+    color: #4b2e2e;
 }
 
+/* Button Styles */
 .cta-button {
-    background-color: #0056b3; /* Blue button */
+    padding: 12px 25px;
+    font-size: 1.2rem;
     color: #fff;
-    padding: 1rem 2.5rem;
-    font-weight: bold;
-    font-size: 1.3rem;
+    background-color: #0056b3; /* Default blue color */
+    border: none;
     border-radius: 50px;
-    transition: background-color 0.3s ease;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .cta-button:hover {
-    background-color: #2d6cae;
+    background-color: #003f7d; /* Darker blue */
     transform: scale(1.05);
 }
+
+/* Class-specific colors */
+.pink-button {
+    background-color: #d81b60;
+}
+
+.pink-button:hover {
+    background-color: #b0003a;
+}
+
+.green-button {
+    background-color: #13a829;
+}
+
+.green-button:hover {
+    background-color: #11701f;
+}
+
+.orange-button {
+    background-color: #f06b43;
+}
+
+.orange-button:hover {
+    background-color: #d55a32;
+}
+
+
 
 /* Class Pack Container */
 .class-pack-container {
@@ -131,7 +159,7 @@ nav ul li a:hover {
 
 .class-pack-section {
     flex: 1;
-    padding: 2rem;
+    padding: 2rem 3rem;
     border-radius: 8px;
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -139,36 +167,10 @@ nav ul li a:hover {
     margin-bottom: 1.5rem;
 }
 
-
-
-.pink-section .cta-button {
-    background-color: #d81b60;
-}
-
-.pink-section .cta-button:hover {
-    background-color: #b0003a;
-}
-
-/*.blue-section {
-    border: 5px solid #9e857b;
-}
-*/
-.blue-section .cta-button {
-    background-color: #40b2de;
-}
-
-.blue-section .cta-button:hover {
-    background-color: #416e69;
-}
-
-
-
-.orange-section .cta-button {
-    background-color: #f06b43;
-}
-
-.orange-section .cta-button:hover {
-    background-color: #f23e07;
+@media only screen and (max-width: 768px) {
+    .class-pack-section {
+        width: 100%;
+    }
 }
 
 /* Dropdown Menu */
@@ -176,7 +178,6 @@ nav ul li a:hover {
     font-size: 1.5rem;
     padding: 12px;
     width: 100%;
-    height: 40px;
     border-radius: 8px;
     border: 2px solid #ccc;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
@@ -202,6 +203,7 @@ nav ul li a:hover {
     font-size: 1.25rem;
 }
 
+
 /* Form Styles */
 form {
     display: flex;
@@ -212,37 +214,23 @@ form {
     text-align: left;
 }
 
-form label {
-    font-weight: bold;
-}
-
 form input, form select {
     width: 100%;
-    padding: 12px;
+    padding: 10px 15px;
     font-size: 1.1rem;
- 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border 0.2s ease;
+}
+
+form input:focus, form select:focus {
+    border: 1px solid #0056b3;
+    outline: none;
 }
 
 form .cta-button {
     align-self: center;
     width: auto;
-}
-
-.cta-button {
-    display: block;
-    width: auto;
-    margin: 20px auto;
-    padding: 12px 20px;
-    font-size: 1.2rem;
-}
-
-.fitness-image, .home-image {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
 }
 
 /* Trainer Section */
@@ -255,161 +243,56 @@ form .cta-button {
     text-align: center;
 }
 
-.trainer-photo, .cert-photo {
+.trainer-photo {
     width: 300px;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer Section */
 .footer-section {
     background-color: #dfe7ed;
-    color: black;
-    padding: 2.5rem;
+    color: #333;
+    padding: 1rem;
     text-align: center;
 }
 
-.footer-section p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
 
-/* Mobile Optimization */
+
 @media only screen and (max-width: 768px) {
-    form input, form select, form button {
-        width: 100%;
-        padding: 12px;
-        font-size: 1.1rem;
-        min-height: 44px;
-    }
-
-    .cta-button {
-        padding: 12px;
-        font-size: 1.2rem;
-    }
-
-    .image-section {
+    .homepage-container, .class-pack-container, .trainer-container {
         flex-direction: column;
-    }
-
-    .class-pack-section {
-        width: 100%;
-    }
-}
-
-
-/* Mobile styles (optional) */
-@media only screen and (max-width: 768px) {
-    .radio-group {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-
-
-    .class-pack-section {
-        width: 100%;
-        text-align: center;
-    }
-
-    form input, form select, form button {
-        width: 100%;
-        padding: 12px;
-        font-size: 1.2rem;
+        align-items: center;
     }
 
     .cta-button {
         width: 100%;
     }
 }
-.qr-codes {
+
+
+.radio-group {
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    align-items: center;
+    gap: 10px; /* Space between radio button and label */
+    margin-bottom: 10px;
 }
 
-.qr-codes img {
-    max-width: 150px;
-    height: auto;
-    margin-right: 10px;
+.radio-group input[type="radio"] {
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any padding */
+    appearance: none; /* Remove browser's default styling */
+    -webkit-appearance: radio; /* Set appearance to radio for Safari */
+    -moz-appearance: radio; /* Set appearance to radio for Firefox */
+    width: 16px; /* Set width for consistency */
+    height: 16px; /* Set height for consistency */
+    border: 1px solid #999; /* Optional: add border for better visibility */
+    border-radius: 50%; /* Make it circular */
+    vertical-align: middle; /* Align vertically with label text */
 }
 
-
-/* Container for the buttons */
-.class-selection-buttons {
-    display: flex;
-    justify-content: center; /* Center the buttons horizontally */
-    gap: 20px; /* Add space between buttons */
-    margin-bottom: 2rem; /* Space below the buttons */
-    padding: 20px 0; /* Padding for the container */
+.radio-group label {
+    margin: 0; /* Remove any extra margins */
+    display: inline-block;
 }
-
-
-.class-selection-buttons .cta-button {
-    background-color: #0056b3; /* Blue button */
-    color: white;
-    padding: 1rem 2.5rem;
-    font-size: 1.2rem;
-    border-radius: 50px;
-    margin: 0 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.class-selection-buttons .cta-button:hover {
-    background-color: #2d6cae;
-}
-/* General button styling */
-.cta-button {
-    padding: 15px 30px;
-    font-size: 1.5rem;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-/* Hover effect */
-.cta-button:hover {
-    transform: scale(1.05);
-}
-
-/* Class-specific colors */
-.pink-button {
-    background-color: #d81b60;
-}
-
-.pink-button:hover {
-    background-color: #b0003a;
-}
-
-.blue-button {
-    background-color: #0056b3;
-}
-
-.blue-button:hover {
-    background-color: #003f7d;
-}
-
-.orange-button {
-    background-color: #f06b43;
-}
-
-.orange-button:hover {
-    background-color: #d55a32;
-}
-
-@media only screen and (max-width: 768px) {
-    .class-selection-buttons {
-        flex-direction: column; /* Stack the buttons vertically */
-    }
-
-    .cta-button {
-        width: 100%; /* Make buttons full-width on mobile */
-    }
-}
-
