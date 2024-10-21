@@ -17,7 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 4rem;
+    padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -46,21 +46,35 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+    .homepage-container {
+        padding: 1rem; /* Reduce padding for mobile */
+    }
+    
     .homepage-text {
+        font-size: 1.2rem; /* Increase text size slightly */
+        line-height: 1.4;
         padding-right: 0;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
+        width: 100%; /* Use full width */
     }
 
     .homepage-image img {
-        max-width: 90%; /* Increases image size on mobile */
+        max-width: 100%; /* Use full width */
     }
 }
 
 @media only screen and (max-width: 480px) {
+    .homepage-text {
+        font-size: 1.1rem; /* Slightly smaller text */
+        line-height: 1.4;
+        margin-bottom: 1rem;
+    }
+
     .homepage-image img {
-        max-width: 100%; /* Use full width on small screens */
+        max-width: 100%; /* Ensure full width */
     }
 }
+
 
 
 
