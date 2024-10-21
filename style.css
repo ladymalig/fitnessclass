@@ -39,7 +39,7 @@ body {
 
 .homepage-image img {
     width: 100%;
-    max-width: 400px; /* Reduces the image size */
+    max-width: 400px; /* Desktop max-width */
     height: auto;
     border-radius: 2px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -52,9 +52,17 @@ body {
     }
 
     .homepage-image img {
-        max-width: 100%;
+        max-width: 90%; /* Increases image size on mobile */
     }
 }
+
+@media only screen and (max-width: 480px) {
+    .homepage-image img {
+        max-width: 100%; /* Use full width on small screens */
+    }
+}
+
+
 
 /* Header Styles */
 header {
