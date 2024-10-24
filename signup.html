@@ -176,13 +176,12 @@ document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
     input.addEventListener('change', function() {
         const signupButton = document.getElementById('signup-button');
         const qrCodesDiv = document.getElementById('venmo-zelle-qrcodes-circuit');
+        const selectedClassPack = document.getElementById('class-pack-select').value;
 
         // Check if the Stripe option is selected
         if (this.value === 'credit-card-stripe') {
             signupButton.addEventListener('click', function(event) {
                 event.preventDefault(); // Prevent default form submission
-                const selectedClassPack = document.getElementById('class-pack-select').value;
-
                 if (selectedClassPack && classInfo[selectedClassPack]) {
                     // Redirect to the Stripe URL for the selected class pack
                     window.location.href = classInfo[selectedClassPack].stripeUrl;
@@ -191,13 +190,22 @@ document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
                 }
             });
             qrCodesDiv.style.display = 'none'; // Hide QR codes for Stripe
-        } else if (this.value === 'venmo-zelle') {
-            qrCodesDiv.style.display = 'block'; // Show QR codes for Venmo/Zelle
+        } 
+        // Check if Venmo/Zelle is selected
+        else if (this.value === 'venmo-zelle') {
+            if (!selectedClassPack) {
+                alert('Please select a class pack before choosing Venmo/Zelle.');
+                this.checked = false; // Uncheck the Venmo/Zelle option
+                qrCodesDiv.style.display = 'none'; // Ensure QR codes are hidden
+            } else {
+                qrCodesDiv.style.display = 'block'; // Show QR codes for Venmo/Zelle
+            }
         } else {
             qrCodesDiv.style.display = 'none'; // Hide QR codes for other methods
         }
     });
 });
+
 </script>
 
 
