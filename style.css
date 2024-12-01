@@ -318,3 +318,66 @@ form .cta-button {
     margin: 0; /* Remove any extra margins */
     display: inline-block;
 }
+
+
+/* Gallery Section */
+.gallery-section {
+    padding: 3rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #034185;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    flex: 1;
+    max-width: 30%;
+    text-align: center;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.gallery-item p {
+    font-size: 1rem;
+    color: #333;
+}
+
+@media only screen and (max-width: 768px) {
+    .homepage-container, .class-pack-container, .trainer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+
+    .gallery-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-item {
+        max-width: 80%;
+    }
+}
+
