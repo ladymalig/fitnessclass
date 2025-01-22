@@ -119,8 +119,8 @@
             <p>*A signed waiver is required before attending your first class. <a href="https://drive.google.com/file/d/1QERoicyToJBhbq-iijURDcQPtYMxYCbI/view?usp=sharing">View Waiver</a></p>
 
             <!-- Submit button -->
-            <input type="submit" id="signup-button" class="cta-button pink-button" value="Sign Up">
-        </form>
+            <!--input type="submit" id="signup-button" class="cta-button pink-button" value="Sign Up">
+        </form-->
 
         <!-- QR Codes for Venmo/Zelle -->
         <div id="venmo-zelle-qrcodes-circuit" style="display: none;">
@@ -275,8 +275,8 @@ document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
         <p>*A signed waiver is required before attending your first class. <a href="https://drive.google.com/file/d/1QERoicyToJBhbq-iijURDcQPtYMxYCbI/view?usp=sharing">View Waiver</a></p>
 
         <!-- Submit button -->
-        <input type="submit" id="signup-button-cardio" class="cta-button green-button" value="Sign Up">
-    </form>
+        <!--input type="submit" id="signup-button-cardio" class="cta-button green-button" value="Sign Up">
+    </form-->
 
     <!-- QR Codes for Venmo/Zelle -->
     <div id="venmo-zelle-qrcodes-cardio" style="display: none;">
@@ -310,94 +310,6 @@ document.querySelectorAll('input[name="payment-method-cardio"]').forEach((input)
 });
 </script>
 
-
-
-
-             <!-- Free Class Pack -->
-             <div id="free-class-section" class="class-pack-section orange-section" style="display: none;">
-             
-             <h1>CANCELLED</h1>
-             <h2>CHAIR CLASS</h2>
-
-             <!-- Price and Class Dates -->
-             <!--p>Dates: January  9, 16, 23, 30 (4 classes)</p>
-             <p>Price: $33.00 ($8.25 per class)</p>
-
-             <!-- Form for Cardio Blast Sign Up -->
-             <!--form id="signup-form-chair" action="https://formspree.io/f/mvgpnvvl" method="POST">
-                 <label for="name-chair">Your Name:</label>
-                 <input type="text" id="name-chair" name="name" required>
-
-                 <label for="email-chair">Your Email:</label>
-                 <input type="email" id="email-chair" name="email" required>
-
-                 <label>Payment Method:</label>
-                 <div class="radio-group">
-                     <input type="radio" id="payment-method-cash-chair" name="payment-method-chair" value="cash" required>
-                     <label for="payment-method-cash-chair">Cash | Check</label>
-                 </div>
-                 <div class="radio-group">
-                     <input type="radio" id="payment-method-stripe-chair" name="payment-method-chair" value="credit-card-stripe" required>
-                     <label for="payment-method-stripe-chair">Credit Card | Apple Pay | Amazon Pay</label>
-                 </div>
-                 <div class="radio-group">
-                     <input type="radio" id="payment-method-venmo-zelle-chair" name="payment-method-chair" value="venmo-zelle" required>
-                     <label for="payment-method-venmo-zelle-chair">Venmo | Zelle</label>
-                 </div>
-
-                 <!-- Hidden input for selected class -->
-                 <!--input type="hidden" name="selected-class" value="Chair Class">
-
-                 <!-- Hidden input for redirect URL -->
-                 <!--input type="hidden" name="_redirect" value="https://workoutclass.netlify.app/thank.html">
-
-                 <p>*All classes must be used within the month of purchase. Unused classes expire at the end of the month.</p>
-
-                 <p>*By signing up, you agree to receive emails regarding class schedules, cancellations, and updates.</p>
-
-                 <p>*A signed waiver is required before attending your first class. <a href="https://drive.google.com/file/d/1QERoicyToJBhbq-iijURDcQPtYMxYCbI/view?usp=sharing">View Waiver</a></p>
-
-                 <!-- Submit button -->
-                 <!--input type="submit" id="signup-button-chair" class="cta-button orange-button" value="Sign Up">
-             </form>
-
-
-             <!-- QR Codes for Venmo/Zelle -->
-             <div id="venmo-zelle-qrcodes-chair" style="display: none;">
-                 <h3>Venmo/Zelle Payment QR Codes:</h3>
-                 <div class="qr-codes">
-                     <img src="venmo.jpeg" alt="Venmo QR Code" style="width: 150px;">
-                     <img src="zelle.jpeg" alt="Zelle QR Code" style="width: 150px;">
-                 </div>
-             </div>
-
-         </div>
-
-         <script>
-             document.querySelectorAll('input[name="payment-method-chair"]').forEach((input) => {
-                 input.addEventListener('change', function () {
-                     const qrCodesDiv = document.getElementById('venmo-zelle-qrcodes-chair');
-                     const signupButton = document.getElementById('signup-button-chair');
-
-                     if (this.value === 'venmo-zelle') {
-                         qrCodesDiv.style.display = 'block'; // Show QR codes for Venmo/Zelle
-                     } else {
-                         qrCodesDiv.style.display = 'none'; // Hide QR codes for other payment methods
-                     }
-
-                     if (this.value === 'credit-card-stripe') {
-                         signupButton.addEventListener('click', function (event) {
-                             event.preventDefault(); // Prevent default form submission
-                             window.location.href = "https://buy.stripe.com/bIY0032u89UTaGscN1"; // Chair Class Stripe URL
-                         });
-                     }
-                 });
-             });
-
-
-         </script>
-            
-        </div>
         
         
         <script>
