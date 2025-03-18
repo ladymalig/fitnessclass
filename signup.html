@@ -66,6 +66,7 @@
     <div class="class-pack">
         
        <!--h2>*SOLD OUT*</h2-->
+        <h2>Circuit Training (Monday & Wednesday 9:00 AM)</h2>
          <h2>April Registration begins March 23, 2025</h2>
         
         <!--p>The March Circuit Class is currently sold out, but you can join the waitlist in case a spot opens up due to cancellations. Simply click the link below to add your name and email address to the waitlist.</p>
@@ -149,21 +150,21 @@
 // Object to store class details
 const classInfo = {
     '8-class': {
-        dates: 'March 3, 5, 10, 12, 17, 19, 24, 26, 31',
+        dates: 'April 2, 7, 9, 14, 16, 21, 23, 28, 30',
         price: '$69.75 (9 classes, $7.75 per class)',
         stripeUrl: 'https://buy.stripe.com/00gdQTecQ4Az5m8006', // Stripe URL for 8-class pack
         label: 'Monday and Wednesday'
     },
     '4-classM': {
-        dates: 'March 3, 10, 17, 24, 31',
-        price: '$41.25 (5 classes, $8.25 per class)',
-        stripeUrl: 'https://buy.stripe.com/6oEeUX3yc7ML29WfZ3', // Stripe URL for 4-class Monday pack
+        dates: 'April 7, 14, 21, 28',
+        price: '$33.00 (4 classes, $8.25 per class)',
+        stripeUrl: 'https://buy.stripe.com/3cs3cfd8M3wv6qcaEI', // Stripe URL for 4-class Monday pack
         label: 'Monday Only'
     },
     '4-classW': {
-        dates: 'March 5, 12, 19, 26',
-        price: '$33.00 (4 classes, $8.25 per class)',
-        stripeUrl: 'https://buy.stripe.com/dR6fZ1c4I2srdSEaEN', // Stripe URL for 4-class Wednesday pack
+        dates: 'April 2, 9, 16, 23, 30',
+        price: '$41.25 (5 classes, $8.25 per class)',
+        stripeUrl: 'https://buy.stripe.com/6oEeUX3yc7ML29WfZ3', // Stripe URL for 4-class Wednesday pack
         label: 'Wednesday Only'
     }
 };
@@ -252,7 +253,7 @@ document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
     
 
     <!-- Price and Class Dates -->
-    <!--p>Dates: March 6, 13, 20, 27 (4 classes)</p>
+    <!--p>Dates: April 3, 10, 17, 24 (4 classes)</p>
     <p>Price: $33.00 ($8.25 per class)</p-->
 
     <!-- Form for Cardio Blast Sign Up -->
