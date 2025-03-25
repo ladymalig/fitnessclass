@@ -67,7 +67,7 @@
         
        <!--h2>*SOLD OUT*</h2-->
         <h2>Circuit Training (Monday & Wednesday 9:00 AM)</h2>
-         <h2>April Registration begins March 25, 2025</h2>
+
         
         <!--p>The March Circuit Class is currently sold out, but you can join the waitlist in case a spot opens up due to cancellations. Simply click the link below to add your name and email address to the waitlist.</p>
         
@@ -83,12 +83,12 @@
     </p-->
 
         <!-- Dropdown Menu for Class Pack Selection -->
-        <!--select id="class-pack-select" name="class-pack" required>
-            <!--option value="" disabled selected>Select a class pack</option-->
-            <!--option value="8-class">All Classes (Monday & Wednesday)</option--> 
-            <!--option value="4-classM">Monday Only</option-->
-            <!--option value="4-classW">Wednesday Only </option>
-    </select-->
+        <select id="class-pack-select" name="class-pack" required>
+            <option value="" disabled selected>Select a class pack</option>
+            <option value="8-class">All Classes (Monday & Wednesday)</option> 
+            <option value="4-classM">Monday Only</option>
+            <option value="4-classW">Wednesday Only </option>
+    </select>
 
         <!-- Placeholder for showing selected class details -->
         <div id="class-details" style="margin-top: 15px; display: none;">
@@ -98,7 +98,7 @@
         </div>
 
         <!-- Form for Circuit Training Sign Up -->
-        <!--form id="signup-form-combined" action="https://formspree.io/f/mvgpnvvl" method="POST">
+        <form id="signup-form-combined" action="https://formspree.io/f/mvgpnvvl" method="POST">
             <label for="name-circuit">Your Name:</label>
             <input type="text" id="name-combined" name="name" required>
 
@@ -116,7 +116,7 @@
             </div>
             <div class="radio-group">
                 <input type="radio" id="payment-method-venmo-zelle" name="payment-method" value="venmo-zelle" required>
-                <label for="payment-method-venmo-zelle">Venmo | Zelle</label-->
+                <label for="payment-method-venmo-zelle">Venmo | Zelle</label>
     </div>
 
             <!-- Hidden input for selected class and class pack -->
@@ -127,12 +127,12 @@
             <input type="hidden" name="_redirect" value="https://workoutclass.netlify.app/thank.html">
   
 
-            <!--p>*All classes must be used within the month of purchase. Unused classes expire at the end of the month.</p>
+            <p>*All classes must be used within the month of purchase. Unused classes expire at the end of the month.</p>
             <p>*By signing up, you agree to receive emails regarding class schedules, cancellations, and updates.</p>
-            <p>*A signed waiver is required before attending your first class. <a href="https://drive.google.com/file/d/1QERoicyToJBhbq-iijURDcQPtYMxYCbI/view?usp=sharing">View Waiver</a></p-->
+            <p>*A signed waiver is required before attending your first class. <a href="https://drive.google.com/file/d/1QERoicyToJBhbq-iijURDcQPtYMxYCbI/view?usp=sharing">View Waiver</a></p>
 
             <!-- Submit button -->
-            <!--input type="submit" id="signup-button" class="cta-button pink-button" value="Sign Up"-->
+            <input type="submit" id="signup-button" class="cta-button pink-button" value="Sign Up">
         </form>
 
         <!-- QR Codes for Venmo/Zelle -->
@@ -246,18 +246,15 @@ document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
 
    <div id="cardio-blast-section" class="class-pack-section blue-section" style="display: none;">
    
-       <h2>Cardio Blast Thursday 9:15 AM</h2>
-        <h2>April Registration begins March 25, 2025</h2>
+       <h2>Cardio Blast Thursday 9:15 AM</h2>      
 
-      
-    
 
     <!-- Price and Class Dates -->
-    <!--p>Dates: April 3, 10, 17, 24 (4 classes)</p>
-    <p>Price: $33.00 ($8.25 per class)</p-->
+    <p>Dates: April 3, 10, 17, 24 (4 classes)</p>
+    <p>Price: $33.00 ($8.25 per class)</p>
 
     <!-- Form for Cardio Blast Sign Up -->
-    <!--form id="signup-form-cardio" action="https://formspree.io/f/mvgpnvvl" method="POST">
+    <form id="signup-form-cardio" action="https://formspree.io/f/mvgpnvvl" method="POST">
         <label for="name-cardio">Your Name:</label>
         <input type="text" id="name-cardio" name="name" required>
 
@@ -275,23 +272,23 @@ document.querySelectorAll('input[name="payment-method"]').forEach((input) => {
         </div>
         <div class="radio-group">
             <input type="radio" id="payment-method-venmo-zelle-cardio" name="payment-method-cardio" value="venmo-zelle" required>
-            <label for="payment-method-venmo-zelle-cardio">Venmo | Zelle</label-->
+            <label for="payment-method-venmo-zelle-cardio">Venmo | Zelle</label>
    </div>
 
         <!-- Hidden input for selected class -->
-        <!--input type="hidden" name="selected-class" value="Cardio Blast"-->
+        <input type="hidden" name="selected-class" value="Cardio Blast">
 
         <!-- Hidden input for redirect URL -->
-        <!--input type="hidden" name="_redirect" value="https://workoutclass.netlify.app/thank.html">
+        <input type="hidden" name="_redirect" value="https://workoutclass.netlify.app/thank.html">
 
         <p>*All classes must be used within the month of purchase. Unused classes expire at the end of the month.</p>
 
         <p>*By signing up, you agree to receive emails regarding class schedules, cancellations, and updates.</p>
 
-        <p>*A signed waiver is required before attending your first class. <a href="https://drive.google.com/file/d/1QERoicyToJBhbq-iijURDcQPtYMxYCbI/view?usp=sharing">View Waiver</a></p-->
+        <p>*A signed waiver is required before attending your first class. <a href="https://drive.google.com/file/d/1QERoicyToJBhbq-iijURDcQPtYMxYCbI/view?usp=sharing">View Waiver</a></p>
 
         <!-- Submit button -->
-        <!--input type="submit" id="signup-button-cardio" class="cta-button green-button" value="Sign Up"-->
+        <input type="submit" id="signup-button-cardio" class="cta-button green-button" value="Sign Up">
     </form>
 
     <!-- QR Codes for Venmo/Zelle -->
