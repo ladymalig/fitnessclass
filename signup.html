@@ -331,10 +331,9 @@ document.querySelectorAll('input[name="payment-method-cardio"]').forEach((input)
             // Get references to buttons and sections
             const circuitButton = document.getElementById('circuit-training-button');
             const cardioButton = document.getElementById('cardio-blast-button');
-            const freeButton = document.getElementById('free-class-button'); // Free class button
             const circuitSection = document.getElementById('circuit-training-section');
             const cardioSection = document.getElementById('cardio-blast-section');
-            const freeSection = document.getElementById('free-class-section'); // Free class section
+            
 
             // Event listener for Circuit Training button
             circuitButton.addEventListener('click', function() {
@@ -350,12 +349,7 @@ document.querySelectorAll('input[name="payment-method-cardio"]').forEach((input)
                 freeSection.style.display = 'none'; // Hide free class section
             });
 
-            // Event listener for Free Chair Class button
-            freeButton.addEventListener('click', function() {
-                freeSection.style.display = 'block'; // Show free class section
-                cardioSection.style.display = 'none'; // Hide other sections
-                circuitSection.style.display = 'none'; // Hide other sections
-            });
+           
         </script>
 
     </section>
@@ -364,10 +358,10 @@ document.querySelectorAll('input[name="payment-method-cardio"]').forEach((input)
         // Get references to buttons and sections
         const circuitButton = document.getElementById('circuit-training-button');
         const cardioButton = document.getElementById('cardio-blast-button');
-        const freeButton = document.getElementById('free-class-button');
+    
         const circuitSection = document.getElementById('circuit-training-section');
         const cardioSection = document.getElementById('cardio-blast-section');
-        const freeSection = document.getElementById('free-class-section');
+   
         
         
         // Event listener for Circuit Training button
